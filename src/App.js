@@ -32,13 +32,20 @@ const parser = (input, callback) => {
  * @param {} props
  */
 const Input = (props) => {
+  /**
+   * @constant
+   * @default
+   */
   const CLASSNAME = [
     'm-view--input',
     '__' + props?.name + '__'
   ].join(GLUE)
 
   return (
-    <label htmlFor='chord-input'>
+    <label
+      className='m-view--label__default__'
+      htmlFor='chord-input'
+    >
       <input
         id='chord-input'
         name='chord-input'
@@ -63,7 +70,7 @@ const Setting = (props) => {
    * @constant
    * @default
    */
-  const EMPTY_CLASS = ''
+  const EMPTY_CLASS = 'm-view--item__default__'
 
   /**
    * @constant
@@ -174,7 +181,10 @@ const Chordlike = (props) => {
         className={CLASSNAME}
         role='menu'
       >
-        <li role='none'>
+        <li
+          className='m-view--listing__default__'
+          role='none'
+        >
           <Setting
             name={DEFAULT_MODE}
             SETMODE={SETMODE}
@@ -182,7 +192,10 @@ const Chordlike = (props) => {
           />
         </li>
 
-        <li role='none'>
+        <li
+          className='m-view--listing__default__'
+          role='none'
+        >
           <Setting
             name={LOGIC_MODE}
             SETMODE={SETMODE}
@@ -190,7 +203,10 @@ const Chordlike = (props) => {
           />
         </li>
 
-        <li role='none'>
+        <li
+          className='m-view--listing__default__'
+          role='none'
+        >
           <Setting
             name={TELEPHONE_MODE}
             SETMODE={SETMODE}
@@ -198,7 +214,10 @@ const Chordlike = (props) => {
           />
         </li>
 
-        <li role='none'>
+        <li
+          className='m-view--listing__default__'
+          role='none'
+        >
           <Setting
             name={WEATHER_MODE}
             SETMODE={SETMODE}
@@ -206,7 +225,10 @@ const Chordlike = (props) => {
           />
         </li>
 
-        <li role='none'>
+        <li
+          className='m-view--listing__default__'
+          role='none'
+        >
           <Setting
             name={LOCATION_MODE}
             SETMODE={SETMODE}
@@ -214,7 +236,10 @@ const Chordlike = (props) => {
           />
         </li>
 
-        <li role='none'>
+        <li
+          className='m-view--listing__default__'
+          role='none'
+        >
           <Setting
             name={CLOCK_MODE}
             SETMODE={SETMODE}
@@ -222,7 +247,10 @@ const Chordlike = (props) => {
           />
         </li>
 
-        <li role='none'>
+        <li
+          className='m-view--listing__default__'
+          role='none'
+        >
           <Setting
             name={WH_MODE}
             SETMODE={SETMODE}
@@ -230,7 +258,10 @@ const Chordlike = (props) => {
           />
         </li>
 
-        <li role='none'>
+        <li
+          className='m-view--listing__default__'
+          role='none'
+        >
           <Setting
             name={SEARCH_MODE}
             SETMODE={SETMODE}
