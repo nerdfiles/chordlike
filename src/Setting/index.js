@@ -1,4 +1,10 @@
 /**
+ * @constant
+ * @default
+ */
+const GLUE = ''
+
+/**
  * parser.
  *
  * @param {} input
