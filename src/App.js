@@ -3,105 +3,8 @@
  */
 import './App.scss'
 import { useState } from 'react'
-
-/**
- * @constant
- * @default
- */
-const GLUE = ''
-
-/**
- * parser.
- *
- * @param {} input
- * @param {} callback
- */
-const parser = (input, callback) => {
-  /**
-   * @constant
-   * @default
-   */
-  const VALUE = input
-
-  callback(VALUE)
-}
-
-/**
- * Input.
- *
- * @param {} props
- */
-const Input = (props) => {
-  /**
-   * @constant
-   * @default
-   */
-  const CLASSNAME = [
-    'm-view--input',
-    '__' + props?.name + '__'
-  ].join(GLUE)
-
-  return (
-    <label
-      className='m-view--label__default__'
-      htmlFor='chord-input'
-    >
-      <input
-        id='chord-input'
-        name='chord-input'
-        required
-        aria-required='true'
-        placeholder={props?.name}
-        className={CLASSNAME}
-        type='text'
-      />
-    </label>
-  )
-}
-
-/**
- * Setting.
- *
- * @param {} props
- */
-const Setting = (props) => {
-
-  /**
-   * @constant
-   * @default
-   */
-  const EMPTY_CLASS = 'm-view--item__default__'
-
-  /**
-   * @constant
-   * @default
-   */
-  const ACTIVE_CLASS = 'm-view--button__active__' 
-
-  /**
-   * @constant
-   * @default
-   */
-  const CLASSNAME = props?.name === props?.active
-    ? ACTIVE_CLASS
-    : EMPTY_CLASS
-
-  return (
-    <button
-      className={CLASSNAME}
-      onClick={(e) => {
-        parser(props?.name, props?.SETMODE)
-      }}
-      role='menuitem'
-      title={[
-        'setting: ',
-        props?.name
-      ].join(GLUE)}
-    >
-      {props?.name}
-    </button>
-  )
-}
+import Setting from './Setting'
+import Input from './Input'
 
 /**
  * Chordlike.
@@ -186,9 +89,9 @@ const Chordlike = (props) => {
           role='none'
         >
           <Setting
+            active={MODE_SETTING}
             name={DEFAULT_MODE}
-            SETMODE={SETMODE}
-            active={MODE_SETTING}
+            setMode={SETMODE}
           />
         </li>
 
@@ -197,9 +100,9 @@ const Chordlike = (props) => {
           role='none'
         >
           <Setting
+            active={MODE_SETTING}
             name={LOGIC_MODE}
-            SETMODE={SETMODE}
-            active={MODE_SETTING}
+            setMode={SETMODE}
           />
         </li>
 
@@ -208,9 +111,9 @@ const Chordlike = (props) => {
           role='none'
         >
           <Setting
+            active={MODE_SETTING}
             name={TELEPHONE_MODE}
-            SETMODE={SETMODE}
-            active={MODE_SETTING}
+            setMode={SETMODE}
           />
         </li>
 
@@ -219,9 +122,9 @@ const Chordlike = (props) => {
           role='none'
         >
           <Setting
+            active={MODE_SETTING}
             name={WEATHER_MODE}
-            SETMODE={SETMODE}
-            active={MODE_SETTING}
+            setMode={SETMODE}
           />
         </li>
 
@@ -230,9 +133,9 @@ const Chordlike = (props) => {
           role='none'
         >
           <Setting
+            active={MODE_SETTING}
             name={LOCATION_MODE}
-            SETMODE={SETMODE}
-            active={MODE_SETTING}
+            setMode={SETMODE}
           />
         </li>
 
@@ -241,9 +144,9 @@ const Chordlike = (props) => {
           role='none'
         >
           <Setting
+            active={MODE_SETTING}
             name={CLOCK_MODE}
-            SETMODE={SETMODE}
-            active={MODE_SETTING}
+            setMode={SETMODE}
           />
         </li>
 
@@ -252,9 +155,9 @@ const Chordlike = (props) => {
           role='none'
         >
           <Setting
+            active={MODE_SETTING}
             name={WH_MODE}
-            SETMODE={SETMODE}
-            active={MODE_SETTING}
+            setMode={SETMODE}
           />
         </li>
 
@@ -263,9 +166,9 @@ const Chordlike = (props) => {
           role='none'
         >
           <Setting
-            name={SEARCH_MODE}
-            SETMODE={SETMODE}
             active={MODE_SETTING}
+            name={SEARCH_MODE}
+            setMode={SETMODE}
           />
         </li>
       </ul>
