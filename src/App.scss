@@ -1,6 +1,107 @@
-html {
-  outline: 1px solid black;
+////
+/// @filepath ./src/App.scss
+/// @name App.css
+////
+:root {
+  --none: 1px solid gold;
+  background-color: #000;
 }
+
+/// @name enableActivity
+/// @group mixins
+@mixin enableActivity () {
+  & {
+    position: relative;
+    z-index: 9001;
+    border: 1px solid gold;
+  }
+
+  /// considering these i'd assume they have nothing to do with each other and
+  /// "active" may be styled generally elsewhere in the global namespace.
+  &.button.active {
+    content: 'who knows if anything reached the global namespace?'
+  }
+
+  /// specific and focused.
+  &[class*='button'][class*='active'] {
+    border: 1px solid gold;
+  }
+}
+
+/// @name enableInputField
+/// @group mixins
+@mixin enableInputField () {
+  &[type] {
+    padding: 0.45rem 0 0.45rem 0.45rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    width: 100%;
+    border: 1px solid transparent;
+  }
+
+  &[class*='geo'] {
+    border: 1px solid red;
+  }
+}
+
+/// @name enableList
+/// @group mixins
+@mixin enableList () {
+  & {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  & li {
+    line-height: 0;
+    position: relative;
+    z-index: 9000;
+  }
+
+  & li button {
+    width: 100%;
+    border: none;
+    padding: 0.25rem 0;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+/// @name html
+/// @group tags
+html {
+  outline: 1px solid teal;
+}
+
+/// @name body
+/// @group tags
 body {
   margin: 0;
 }
+
+/// @name button
+/// @group tags
+button {
+  @include enableActivity();
+}
+
+/// @name input
+/// @group tags
+input {
+  @include enableInputField();
+}
+
+/// @name lists
+/// @group classes
+ul,
+ol,
+.m-view--list,
+.m-view--list__default__ {
+  @include enableList();
+}
+
+/// EOF
