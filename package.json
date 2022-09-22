@@ -20,7 +20,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "help": "npm run $(echo \"$(npm run)\" | percol)",
-    "open": "vim $(ack '@' src -l | percol)"
+    "publish": "cd build && echo 'sleepy-operation.surge.sh' >> CNAME && surge .",
+    "open": "vim $(ack '@' src -l | percol)",
+    "install/ack": "brew install ack",
+    "install/percol": "brew install percol",
+    "install/surge": "brew install surge"
   },
   "eslintConfig": {
     "extends": [
