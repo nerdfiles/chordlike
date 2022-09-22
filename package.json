@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "help": "npm run $(echo \"$(npm run)\" | percol)"
+    "help": "npm run $(echo \"$(npm run)\" | percol)",
+    "open": "vim $(ack '@' src -l | percol)"
   },
   "eslintConfig": {
     "extends": [
