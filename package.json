@@ -1,7 +1,10 @@
 {
   "name": "chordlike",
-  "version": "0.1.0",
+  "version": "0.0.0-novel.0",
+  "description": "chordlikes",
   "private": true,
+  "author": "aha <patagnome@protonmail.com>",
+  "license": "WTFPL",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -15,7 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "help": "npm run $(echo \"$(npm run)\" | percol)"
   },
   "eslintConfig": {
     "extends": [
