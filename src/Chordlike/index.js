@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Setting from './Setting'
-import Input from './Input'
+import Setting from '../Setting'
+import Input from '../Input'
 
 /**
  * Chordlike.
