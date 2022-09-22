@@ -1,0 +1,8 @@
+// {type:state}
+// {generate:true}
+
+(start)[TELEPHONE_MODE]->(end)
+(start)[SEARCH_MODE]->(end)
+(start)[WEATHER_MODE]->(end)
+
+// EOF
