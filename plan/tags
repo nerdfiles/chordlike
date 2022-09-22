@@ -1,0 +1,19 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/Users/nerdfiles/Projects/chordlike/chordlike/plan/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+edge1	index.yuml.svg	/^<g id="edge1" class="edge">$/;"	i
+edge2	index.yuml.svg	/^<g id="edge2" class="edge">$/;"	i
+edge3	index.yuml.svg	/^<g id="edge3" class="edge">$/;"	i
+graph0	index.yuml.svg	/^<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 104)">$/;"	i
+node1	index.yuml.svg	/^<g id="node1" class="node">$/;"	i
+node2	index.yuml.svg	/^<g id="node2" class="node">$/;"	i
+nse4033c300101	index.yuml.svg	/^ viewBox="0.00 0.00 312.25 108.00" xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\//;"	n	uri:http://www.w3.org/2000/svg
+xlink	index.yuml.svg	/^ viewBox="0.00 0.00 312.25 108.00" xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\//;"	n	uri:http://www.w3.org/1999/xlink

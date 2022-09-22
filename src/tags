@@ -1,0 +1,60 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/Users/nerdfiles/Projects/chordlike/chordlike/src/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+.active	App.scss	/^  &.button.active {$/;"	c
+.button	App.scss	/^  &.button.active {$/;"	c
+.m-view--list	App.scss	/^.m-view--list,$/;"	c
+.m-view--list__default__	App.scss	/^.m-view--list__default__ {$/;"	c
+ACTIVE_CLASS	App.js	/^  const ACTIVE_CLASS = 'm-view--button__active__' $/;"	C
+App	App.js	/^function App () {$/;"	f
+CLASSNAME	App.js	/^        className={CLASSNAME}$/;"	M	class:className
+CLASSNAME	App.js	/^      className={CLASSNAME}$/;"	M	class:className
+CLASSNAME	App.js	/^  const CLASSNAME = 'm-view--list__default__'$/;"	C
+CLASSNAME	App.js	/^  const CLASSNAME = [$/;"	C
+CLASSNAME	App.js	/^  const CLASSNAME = props?.name === props?.active$/;"	C
+CLOCK_MODE	App.js	/^            name={CLOCK_MODE}$/;"	M	class:name
+CLOCK_MODE	App.js	/^  const CLOCK_MODE = 'now' \/\/ 'now', ...$/;"	C
+Chordlike	App.js	/^const Chordlike = (props) => {$/;"	C
+DEFAULT_MODE	App.js	/^            name={DEFAULT_MODE}$/;"	M	class:name
+DEFAULT_MODE	App.js	/^  const DEFAULT_MODE = 'math' \/\/ '([0-9]*)', '+', '-', ...$/;"	C
+EMPTY_CLASS	App.js	/^  const EMPTY_CLASS = 'm-view--item__default__'$/;"	C
+GLUE	App.js	/^const GLUE = ''$/;"	C
+Input	App.js	/^const Input = (props) => {$/;"	C
+LOCATION_MODE	App.js	/^            name={LOCATION_MODE}$/;"	M	class:name
+LOCATION_MODE	App.js	/^  const LOCATION_MODE = 'geo' \/\/ 'nearby', ...$/;"	C
+LOGIC_MODE	App.js	/^            name={LOGIC_MODE}$/;"	M	class:name
+LOGIC_MODE	App.js	/^  const LOGIC_MODE = 'fol' \/\/ '!', '>', '&', 'v', '()', '\\∀', ...$/;"	C
+MODE_SETTING	App.js	/^            active={MODE_SETTING}$/;"	M	class:active
+MODE_SETTING	App.js	/^      <Input name={MODE_SETTING} \/>$/;"	M	class:AnonymousClassa7a74a510101
+MODE_SETTING	App.js	/^  const MODE_SETTING = MODE || DEFAULT_MODE$/;"	C
+SEARCH_MODE	App.js	/^            name={SEARCH_MODE}$/;"	M	class:name
+SEARCH_MODE	App.js	/^  const SEARCH_MODE = 'searchbox' \/\/ '([A-Za-z])', suggest logical operations and advanced sea/;"	C
+SETMODE	App.js	/^            SETMODE={SETMODE}$/;"	M	class:SETMODE
+SETMODE	App.js	/^  const [MODE, SETMODE] = useState('math')$/;"	C
+Setting	App.js	/^const Setting = (props) => {$/;"	C
+TELEPHONE_MODE	App.js	/^            name={TELEPHONE_MODE}$/;"	M	class:name
+TELEPHONE_MODE	App.js	/^  const TELEPHONE_MODE = 'tel' \/\/ '#', '*', ([0-9])$/;"	C
+VALUE	App.js	/^  const VALUE = input$/;"	C
+WEATHER_MODE	App.js	/^            name={WEATHER_MODE}$/;"	M	class:name
+WEATHER_MODE	App.js	/^  const WEATHER_MODE = 'temp' \/\/ 'temp', ...$/;"	C
+WH_MODE	App.js	/^            name={WH_MODE}$/;"	M	class:name
+WH_MODE	App.js	/^  const WH_MODE = 'wh-*' \/\/ 'wh-*', ...$/;"	C
+[ 'setting: ', props?.name ]	App.js	/^        'setting: ',$/;"	M	class:title
+enableActivity	App.scss	/^@mixin enableActivity () {$/;"	m
+enableInputField	App.scss	/^@mixin enableInputField () {$/;"	m
+enableList	App.scss	/^@mixin enableList () {$/;"	m
+getCLS	reportWebVitals.js	/^    webVitals.then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {$/;"	M	class:AnonymousClass72080abd0101
+linkElement	App.test.js	/^  const linkElement = screen.getByText(\/learn react\/i);$/;"	C
+parser	App.js	/^const parser = (input, callback) => {$/;"	C
+props	App.js	/^        placeholder={props?.name}$/;"	M	class:placeholder
+reportWebVitals	reportWebVitals.js	/^const reportWebVitals = onPerfEntry => {$/;"	C
+root	index.js	/^const root = ReactDOM.createRoot(document.getElementById('root'))$/;"	C
+webVitals	reportWebVitals.js	/^    const webVitals = require('web-vitals')$/;"	C
