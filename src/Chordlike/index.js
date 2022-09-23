@@ -98,7 +98,7 @@ const Chordlike = (props) => {
    * @constant
    * @default
    */
-  const INTERFACE = [
+  const INTERFACE_MENU = [
     getSetting(MODE_SETTING, DEFAULT_MODE, setMode),
     getSetting(MODE_SETTING, LOGIC_MODE, setMode),
     getSetting(MODE_SETTING, TELEPHONE_MODE, setMode),
@@ -121,10 +121,12 @@ const Chordlike = (props) => {
         className={CLASSNAME}
         role='menu'
       >
-        {INTERFACE?.length
-          ? INTERFACE.map((el) => {
+        {
+          INTERFACE_MENU?.length
+          ? INTERFACE_MENU.map((el, index) => {
             return (
               <li
+                key={index}
                 className='m-view--listing__default__'
                 role='none'
               >
