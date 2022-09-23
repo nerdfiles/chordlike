@@ -32,12 +32,6 @@ const Chordlike = (props) => {
    * @constant
    * @default
    */
-  const [mode, setMode] = useState('math')
-
-  /**
-   * @constant
-   * @default
-   */
   const DEFAULT_MODE = 'math' // '([0-9]*)', '+', '-', ...
 
   /**
@@ -81,6 +75,12 @@ const Chordlike = (props) => {
    * @default
    */
   const SEARCH_MODE = 'searchbox' // '([A-Za-z])', suggest logical operations and advanced search recipes as typing goes
+
+  /**
+   * @constant
+   * @default
+   */
+  const [mode, setMode] = useState(DEFAULT_MODE)
 
   /**
    * @constant
