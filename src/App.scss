@@ -10,8 +10,11 @@
 input,
 h1, h2, h3, h4, h5, h6,
 body, p, ol, ul, dl, li,
+em, i, strong, b, q, blockquote,
+abbr, span,
 table, label, input, button {
   font-family: 'Eulexia';
+  letter-spacing: 0.025rem;
 }
 
 /// @name ./src/App.scss:mixins:enableActivity
@@ -131,20 +134,35 @@ footer {
     display: block;
     width: 100%;
 
+    color: white;
+    text-decoration: none;
+
     font: {
       size: .5rem;
     }
 
-    color: white;
-    text-decoration: none;
-
     &:hover {
       text-decoration: underline;
     }
+
+    &:focus,
     &:active {
       outline: 1px solid gold;
     }
   }
+}
+
+.accessibly-hide {
+  position: absolute;
+  z-index: -9999;
+}
+
+.m-view--headline__default__ {
+  @extend .accessibly-hide;
+}
+
+.m-view--labeltext__default__ {
+  @extend .accessibly-hide;
 }
 
 /// EOF

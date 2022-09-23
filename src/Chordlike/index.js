@@ -110,7 +110,8 @@ const Chordlike = (props) => {
   ]
 
   return (
-    <div>
+    <div role='main'>
+      <h1 className='m-view--headline__default__'>chordlike</h1>
       <div className='m-view--dashboard__default__'>
         <Input
           name={MODE_SETTING}
