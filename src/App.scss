@@ -7,7 +7,13 @@
   background-color: #000;
 }
 
-input,
+html, button, input {
+  font-size: 1.5rem;
+}
+
+body {
+}
+
 h1, h2, h3, h4, h5, h6,
 body, p, ol, ul, dl, li,
 em, i, strong, b, q, blockquote,
@@ -131,18 +137,22 @@ footer {
   }
 
   a {
+    line-height: 0;
     display: block;
     width: 100%;
+    border-bottom: 2px solid purple;
 
     color: white;
     text-decoration: none;
 
     font: {
-      size: .5rem;
+      size: 14px;
     }
 
     &:hover {
       text-decoration: underline;
+      color: white;
+      border-bottom: 2px solid orange;
     }
 
     &:focus,
