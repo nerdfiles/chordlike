@@ -46,7 +46,7 @@ const Input = (props) => {
     const DATA_INPUT = Number(DATA)
     const STORE = []
 
-    // grouping input numbers until there's a NaN. it ain't smart and it ain't 
+    // grouping input numbers until there's a NaN. it ain't smart and it ain't
     // fast but it also ain't cheap.
     if (PARTS.length && isNaN(DATA_INPUT)) {
       const OP_CODE = PARTS && PARTS.splice(PARTS.length-1, 1)
@@ -56,10 +56,8 @@ const Input = (props) => {
       })
 
       STORE.push([OP_CODE, outcome])
-      //STORE.push(outcome)
     }
 
-    // @todo gettin' hairy
     const OPERATOR_POSITION = 1
     const EXPRESSION = STORE && STORE.length && STORE[0][1]
     log(EXPRESSION)
