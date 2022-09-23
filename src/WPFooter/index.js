@@ -69,6 +69,17 @@ const WPFooter = (props) => {
           className='m-view--listing__default__'
         >
           <a
+            title='accessibility of and for the accessible'
+            href='https://wave.webaim.org/report#/https://sleepy-operation.surge.sh/'
+          >
+            audit <abbr title='accessibility'>#a11y</abbr>
+          </a>
+        </li>
+
+        <li
+          className='m-view--listing__default__'
+        >
+          <a
             title='repo'
             href='https://github.com/nerdfiles/chordlike'
           >
