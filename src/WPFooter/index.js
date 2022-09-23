@@ -25,6 +25,17 @@ const WPFooter = (props) => {
           className='m-view--listing__default__'
         >
           <a
+            title='docs'
+            href='https://sleepy-operation.surge.sh/docs/'
+          >
+            docs
+          </a>
+        </li>
+
+        <li
+          className='m-view--listing__default__'
+        >
+          <a
             title='unit tests'
             href='https://sleepy-operation.surge.sh/report/ut-report/'
           >
