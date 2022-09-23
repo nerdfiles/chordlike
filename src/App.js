@@ -3,21 +3,17 @@
  */
 import './App.scss'
 import Chordlike from './Chordlike'
+import WPFooter from './WPFooter'
 
 /**
  * App.
  */
 function App () {
   return (
-    <>
+    <div className='O-view--app__default__'>
       <Chordlike />
-      <footer>
-        <ul>
-          <li><a href='https://sleepy-operation.surge.sh/'>home</a></li>
-          <li><a href='https://github.com/nerdfiles/chordlike'>repo</a></li>
-        </ul>
-      </footer>
-    </>
+      <WPFooter />
+    </div>
   )
 }
 

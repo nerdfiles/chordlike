@@ -1,12 +1,15 @@
 /**
+ * @filepath ./src/Input/index.js
+ */
+
+/**
  * @constant
  * @default
  */
 const GLUE = ''
 
 /**
- * Input.
- *
+ * @name Input
  * @param {} props
  */
 const Input = (props) => {
@@ -16,7 +19,9 @@ const Input = (props) => {
    */
   const CLASSNAME = [
     'm-view--input',
-    '__' + props?.name + '__'
+    '__',
+    props?.name,
+    '__'
   ].join(GLUE)
 
   return (

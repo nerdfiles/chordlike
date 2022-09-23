@@ -1,12 +1,15 @@
 /**
+ * @filepath ./src/Setting/index.js
+ */
+
+/**
  * @constant
  * @default
  */
 const GLUE = ''
 
 /**
- * parser.
- *
+ * @name parser
  * @param {} input
  * @param {} callback
  */
@@ -21,8 +24,7 @@ const parser = (input, callback) => {
 }
 
 /**
- * Setting.
- *
+ * @name Setting
  * @param {} props
  */
 const Setting = (props) => {

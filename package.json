@@ -24,7 +24,7 @@
     "open": "vim $(ack '@' src -l | percol)",
     "install/ack": "brew install ack",
     "install/percol": "brew install percol",
-    "install/surge": "brew install surge"
+    "install/surge": "npm install -g surge "
   },
   "eslintConfig": {
     "extends": [

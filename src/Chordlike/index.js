@@ -1,11 +1,13 @@
+/**
+ * @filepath ./src/Chordlike/index.js
+ */
 import { useState } from 'react'
 import Setting from '../Setting'
-import Input from '../Input'
+import Input from './Input'
 
 /**
- * Chordlike.
- *
- * @note that we're configuring the input box for mobile, assistive
+ * @name Chordlike
+ * @description that we're configuring the input box for mobile, assistive
  * tools.
  * @param {} props
  */
@@ -78,7 +80,9 @@ const Chordlike = (props) => {
 
   return (
     <>
-      <Input name={MODE_SETTING} />
+      <div className='m-view--dashboard__default__'>
+        <Input name={MODE_SETTING} />
+      </div>
 
       <ul
         className={CLASSNAME}
