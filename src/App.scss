@@ -7,6 +7,13 @@
   background-color: #000;
 }
 
+input,
+h1, h2, h3, h4, h5, h6,
+body, p, ol, ul, dl, li,
+table, label, input, button {
+  font-family: 'Eulexia';
+}
+
 /// @name ./src/App.scss:mixins:enableActivity
 /// @group interface.config
 @mixin enableActivity () {
@@ -71,7 +78,7 @@
 /// @name ./src/App.scss:tags:html
 /// @group interface.parts
 html {
-  outline: 1px solid teal;
+  // outline: 1px solid teal;
 }
 
 /// @name ./src/App.scss:tags:body
@@ -104,11 +111,33 @@ ol,
 /// @name ./src/App.scss:tags:footer
 /// @group interfaces
 footer {
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+
+  border-top: 2px solid teal;
+  border-bottom: 2px solid teal;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  ul li {
+    flex-grow: 1;
+    text-align: center;
+  }
+
   a {
     display: block;
-    padding: 0.5rem;
+    width: 100%;
+
+    font: {
+      size: .5rem;
+    }
+
     color: white;
     text-decoration: none;
+
     &:hover {
       text-decoration: underline;
     }
