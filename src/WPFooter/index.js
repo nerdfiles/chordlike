@@ -25,6 +25,17 @@ const WPFooter = (props) => {
           className='m-view--listing__default__'
         >
           <a
+            title='static code analysis'
+            href='https://sleepy-operation.surge.sh/report/complexity/'
+          >
+            analysis
+          </a>
+        </li>
+
+        <li
+          className='m-view--listing__default__'
+        >
+          <a
             title='repo'
             href='https://github.com/nerdfiles/chordlike'
           >
