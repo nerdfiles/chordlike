@@ -8,7 +8,7 @@
 }
 
 /// @name ./src/App.scss:mixins:enableActivity
-/// @group config
+/// @group interface.config
 @mixin enableActivity () {
   & {
     position: relative;
@@ -29,7 +29,7 @@
 }
 
 /// @name ./src/App.scss:mixins:enableInputField
-/// @group config
+/// @group interface.config
 @mixin enableInputField () {
   &[type] {
     padding: 0.45rem 0 0.45rem 0.45rem;
@@ -46,7 +46,7 @@
 }
 
 /// @name ./src/App.scss:mixins:enableList
-/// @group config
+/// @group interface.config
 @mixin enableList () {
   & {
     margin: 0;
@@ -93,7 +93,7 @@ input {
 }
 
 /// @name ./src/App.scss:tags:lists
-/// @group lists
+/// @group interface.parts
 ul,
 ol,
 .m-view--list,
@@ -102,7 +102,7 @@ ol,
 }
 
 /// @name ./src/App.scss:tags:footer
-/// @group footers
+/// @group interfaces
 footer {
   a {
     display: block;
