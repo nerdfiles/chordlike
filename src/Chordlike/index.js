@@ -78,6 +78,10 @@ const Chordlike = (props) => {
    */
   const CLASSNAME = 'm-view--list__default__'
 
+  /**
+   * @constant
+   * @default
+   */
   const DEFAULT_MODE_ITEM = (
     <Setting
       active={MODE_SETTING}
@@ -86,6 +90,10 @@ const Chordlike = (props) => {
     />
   )
 
+  /**
+   * @constant
+   * @default
+   */
   const LOGIC_MODE_ITEM = (
     <Setting
       active={MODE_SETTING}
@@ -94,6 +102,10 @@ const Chordlike = (props) => {
     />
   )
 
+  /**
+   * @constant
+   * @default
+   */
   const TELEPHONE_MODE_ITEM = (
     <Setting
       active={MODE_SETTING}
@@ -102,6 +114,10 @@ const Chordlike = (props) => {
     />
   )
 
+  /**
+   * @constant
+   * @default
+   */
   const WEATHER_MODE_ITEM = (
     <Setting
       active={MODE_SETTING}
@@ -110,6 +126,10 @@ const Chordlike = (props) => {
     />
   )
 
+  /**
+   * @constant
+   * @default
+   */
   const LOCATION_MODE_ITEM = (
     <Setting
       active={MODE_SETTING}
@@ -118,6 +138,10 @@ const Chordlike = (props) => {
     />
   )
 
+  /**
+   * @constant
+   * @default
+   */
   const CLOCK_MODE_ITEM = (
     <Setting
       active={MODE_SETTING}
@@ -126,6 +150,10 @@ const Chordlike = (props) => {
     />
   )
 
+  /**
+   * @constant
+   * @default
+   */
   const WH_MODE_ITEM = (
     <Setting
       active={MODE_SETTING}
@@ -134,6 +162,10 @@ const Chordlike = (props) => {
     />
   )
 
+  /**
+   * @constant
+   * @default
+   */
   const SEARCH_MODE_ITEM = (
     <Setting
       active={MODE_SETTING}
@@ -142,6 +174,10 @@ const Chordlike = (props) => {
     />
   )
 
+  /**
+   * @constant
+   * @default
+   */
   const INTERFACE = [
     DEFAULT_MODE_ITEM,
     LOGIC_MODE_ITEM,
