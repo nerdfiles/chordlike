@@ -8,7 +8,6 @@
   "jest": {
     "coverageReporters": [
       "json",
-      "lcov",
       "html"
     ]
   },
@@ -31,12 +30,14 @@
     "$test": "npm run test",
     "eject": "react-scripts eject",
     "$eject": "npm run eject",
-    "$publish": "cd build && echo 'sleepy-operation.surge.sh' > CNAME && surge .",
-    "$test:coverage": "CI=true npm test -- --env=jsdom --coverage",
     "#open": "vim $(ack '@' src -l | percol)",
-    "#report": "./node_modules/.bin/es6-plato -r -e .eslintrc.backup -d report/complexity src/**/**/*.js",
-    "$publish:coverage": "rm -rf build/report/coverage && mkdir -p build/report && cp -R coverage build/report/ && npm run '$publish'",
-    "$publish:report": "rm -rf build/report/complexity && mkdir -p build/report && cp -R report/complexity build/report/ && npm run '$publish'",
+    "#test:unit": "set CI=true &&react-scripts test --env=jsdom --testResultsProcessor=./node_modules/jest-html-reporter",
+    "#test:coverage": "CI=true npm test -- --env=jsdom --coverage",
+    "#publish": "cd build && echo 'sleepy-operation.surge.sh' > CNAME && surge .",
+    "#report/complexity": "./node_modules/.bin/es6-plato -r -e .eslintrc.backup -d report/complexity src/**/**/*.js",
+    "#publish:unit": "rm -rf build/report/ut-report && mkdir -p build/report && cp -R ut-report build/report/ && npm run '#publish'",
+    "#publish:coverage": "rm -rf build/report/coverage && mkdir -p build/report && cp -R coverage build/report/ && npm run '#publish'",
+    "#publish:report": "rm -rf build/report/complexity && mkdir -p build/report && cp -R report/complexity build/report/ && npm run '#publish'",
     "#help": "npm run $(echo \"$(npm run)\" | percol)",
     "#install/ack": "brew install ack",
     "#install/percol": "brew install percol",

@@ -1,0 +1,5 @@
+{
+  "pageTitle": "chordlike's unit tests",
+  "outputPath": "ut-report/index.html",
+  "includeFailureMsg": true
+}
