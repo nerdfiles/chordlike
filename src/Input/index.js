@@ -41,11 +41,15 @@ const Input = (props) => {
     const DATA = PARTS[PARTS.length - 1]
     const DATA_INPUT = Number(DATA)
     const STORE = []
+
+    // grouping input numbers until there's a NaN. it ain't smart and it ain't 
+    // fast but it also ain't cheap.
     if (PARTS.length && isNaN(DATA_INPUT)) {
-      const operator = PARTS && PARTS.splice(PARTS.length-1, 1)
+      // const operator = PARTS && PARTS.splice(PARTS.length-1, 1)
       const outcome = PARTS.reduce((accumulatorRef, currentRef) => {
         return accumulatorRef + currentRef
       })
+
       STORE.push(outcome)
     }
 
@@ -53,10 +57,12 @@ const Input = (props) => {
     const EXPRESSION = STORE[0]
     const OP_CHAR = '+'
     const OPERANDS = EXPRESSION && EXPRESSION.split(OP_CHAR)
+
     if (OPERANDS && OPERANDS.length > 1) {
       const leftOperand = Number(OPERANDS[0])
       const rightOperand = Number(OPERANDS[1])
       const OUTPUT = leftOperand + rightOperand
+
       SETINPUT(OUTPUT)
     }
 
