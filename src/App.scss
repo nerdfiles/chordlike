@@ -9,7 +9,7 @@
 }
 
 html, button, input {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 body {
@@ -172,6 +172,7 @@ footer {
 
 .accessibly-hide {
   position: absolute;
+  left: -9999px;
   z-index: -9999;
 }
 
@@ -181,6 +182,17 @@ footer {
 
 .m-view--labeltext__default__ {
   @extend .accessibly-hide;
+}
+
+input[class*="m-view--input"] {
+  text-align: right;
+  padding: 0;
+  margin: 0;
+}
+.m-view--output__default__ {
+  text-align: right;
+  display: block;
+  color: white;
 }
 
 /// EOF
