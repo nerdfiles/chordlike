@@ -78,115 +78,29 @@ const Chordlike = (props) => {
    */
   const CLASSNAME = 'm-view--list__default__'
 
-  /**
-   * @constant
-   * @default
-   */
-  const DEFAULT_MODE_ITEM = (
-    <Setting
-      active={MODE_SETTING}
-      name={DEFAULT_MODE}
-      setMode={SETMODE}
-    />
-  )
-
-  /**
-   * @constant
-   * @default
-   */
-  const LOGIC_MODE_ITEM = (
-    <Setting
-      active={MODE_SETTING}
-      name={LOGIC_MODE}
-      setMode={SETMODE}
-    />
-  )
-
-  /**
-   * @constant
-   * @default
-   */
-  const TELEPHONE_MODE_ITEM = (
-    <Setting
-      active={MODE_SETTING}
-      name={TELEPHONE_MODE}
-      setMode={SETMODE}
-    />
-  )
-
-  /**
-   * @constant
-   * @default
-   */
-  const WEATHER_MODE_ITEM = (
-    <Setting
-      active={MODE_SETTING}
-      name={WEATHER_MODE}
-      setMode={SETMODE}
-    />
-  )
-
-  /**
-   * @constant
-   * @default
-   */
-  const LOCATION_MODE_ITEM = (
-    <Setting
-      active={MODE_SETTING}
-      name={LOCATION_MODE}
-      setMode={SETMODE}
-    />
-  )
-
-  /**
-   * @constant
-   * @default
-   */
-  const CLOCK_MODE_ITEM = (
-    <Setting
-      active={MODE_SETTING}
-      name={CLOCK_MODE}
-      setMode={SETMODE}
-    />
-  )
-
-  /**
-   * @constant
-   * @default
-   */
-  const WH_MODE_ITEM = (
-    <Setting
-      active={MODE_SETTING}
-      name={WH_MODE}
-      setMode={SETMODE}
-    />
-  )
-
-  /**
-   * @constant
-   * @default
-   */
-  const SEARCH_MODE_ITEM = (
-    <Setting
-      active={MODE_SETTING}
-      name={SEARCH_MODE}
-      setMode={SETMODE}
-    />
-  )
+  const getSetting = (s, m, f) => {
+    return (
+      <Setting
+        active={s}
+        name={m}
+        setMode={f}
+      />
+    )
+  }
 
   /**
    * @constant
    * @default
    */
   const INTERFACE = [
-    DEFAULT_MODE_ITEM,
-    LOGIC_MODE_ITEM,
-    TELEPHONE_MODE_ITEM,
-    WEATHER_MODE_ITEM,
-    LOCATION_MODE_ITEM,
-    CLOCK_MODE_ITEM,
-    WH_MODE_ITEM,
-    SEARCH_MODE_ITEM
+    getSetting(MODE_SETTING, DEFAULT_MODE, SETMODE),
+    getSetting(MODE_SETTING, LOGIC_MODE, SETMODE),
+    getSetting(MODE_SETTING, TELEPHONE_MODE, SETMODE),
+    getSetting(MODE_SETTING, WEATHER_MODE, SETMODE),
+    getSetting(MODE_SETTING, LOCATION_MODE, SETMODE),
+    getSetting(MODE_SETTING, CLOCK_MODE, SETMODE),
+    getSetting(MODE_SETTING, WH_MODE, SETMODE),
+    getSetting(MODE_SETTING, SEARCH_MODE, SETMODE)
   ]
 
   return (
