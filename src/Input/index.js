@@ -30,12 +30,12 @@ const Input = (props) => {
       htmlFor='chord-input'
     >
       <input
+        ariaRequired={true}
+        className={CLASSNAME}
         id='chord-input'
         name='chord-input'
-        required
-        aria-required='true'
         placeholder={props?.name}
-        className={CLASSNAME}
+        required
         type='text'
       />
     </label>
