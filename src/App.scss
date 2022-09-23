@@ -12,6 +12,14 @@ html, button, input {
   font-size: 1rem;
 }
 
+@media (max-width: 421px) {
+  html {
+  }
+  html, button, input {
+    font-size: 1.4rem;
+  }
+}
+
 body {
 }
 
@@ -30,7 +38,7 @@ table, label, input, button {
   & {
     position: relative;
     z-index: 9001;
-    border: 1px solid gold;
+    outline: 1px solid gold;
   }
 
   /// considering these i'd assume they have nothing to do with each other and
@@ -41,7 +49,7 @@ table, label, input, button {
 
   /// specific and focused.
   &[class*='button'][class*='active'] {
-    border: 1px solid gold;
+    outline: 1px solid gold;
   }
 }
 
@@ -54,11 +62,11 @@ table, label, input, button {
     color: #fff;
     border: none;
     width: 100%;
-    border: 1px solid transparent;
+    outline: 1px solid transparent;
   }
 
   &[class*='geo'] {
-    border: 1px solid red;
+    outline: 1px solid red;
   }
 }
 
@@ -79,7 +87,7 @@ table, label, input, button {
     border: none;
     padding: 0.25rem 0;
     cursor: pointer;
-    border: 1px solid transparent;
+    outline: 1px solid transparent;
     background-color: #000;
     color: #fff;
   }
