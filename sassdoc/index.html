@@ -1,0 +1,115 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Chordlike - v0.0.0-novel.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Chordlike - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>chordlikes</p>
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Chordlike - 0.0.0-novel.0</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="interface.config"><a href="#interface.config">interface.config</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="interface.config-mixin"><a href="#interface.config-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="interface.config" data-name="./src/App.scss:mixins:enableActivity" data-type="mixin"><a href="#interface.config-mixin-./src/App.scss:mixins:enableActivity">./src/App.scss:mixins:enableActivity</a></li><li class="sidebar__item sassdoc__item" data-group="interface.config" data-name="./src/App.scss:mixins:enableInputField" data-type="mixin"><a href="#interface.config-mixin-./src/App.scss:mixins:enableInputField">./src/App.scss:mixins:enableInputField</a></li><li class="sidebar__item sassdoc__item" data-group="interface.config" data-name="./src/App.scss:mixins:enableList" data-type="mixin"><a href="#interface.config-mixin-./src/App.scss:mixins:enableList">./src/App.scss:mixins:enableList</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="interface.parts"><a href="#interface.parts">interface.parts</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="interface.parts-css"><a href="#interface.parts-css">css</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="interface.parts" data-name="./src/App.scss:tags:html" data-type="css"><a href="#interface.parts-css-./src/App.scss:tags:html">./src/App.scss:tags:html</a></li><li class="sidebar__item sassdoc__item" data-group="interface.parts" data-name="./src/App.scss:tags:body" data-type="css"><a href="#interface.parts-css-./src/App.scss:tags:body">./src/App.scss:tags:body</a></li><li class="sidebar__item sassdoc__item" data-group="interface.parts" data-name="./src/App.scss:tags:button" data-type="css"><a href="#interface.parts-css-./src/App.scss:tags:button">./src/App.scss:tags:button</a></li><li class="sidebar__item sassdoc__item" data-group="interface.parts" data-name="./src/App.scss:tags:input" data-type="css"><a href="#interface.parts-css-./src/App.scss:tags:input">./src/App.scss:tags:input</a></li><li class="sidebar__item sassdoc__item" data-group="interface.parts" data-name="./src/App.scss:tags:lists" data-type="css"><a href="#interface.parts-css-./src/App.scss:tags:lists">./src/App.scss:tags:lists</a></li><li class="sidebar__item sassdoc__item" data-group="interface.parts" data-name="./src/index.scss:tags:li" data-type="css"><a href="#interface.parts-css-./src/index.scss:tags:li">./src/index.scss:tags:li</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="interfaces"><a href="#interfaces">interfaces</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="interfaces-css"><a href="#interfaces-css">css</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="interfaces" data-name="./src/App.scss:tags:footer" data-type="css"><a href="#interfaces-css-./src/App.scss:tags:footer">./src/App.scss:tags:footer</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-css"><a href="#undefined-css">css</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="App.css" data-type="css"><a href="#undefined-css-App.css">App.css</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="App.css" data-type="css"><a href="#undefined-css-App.css">App.css</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="interface.config"><div class="container">interface.config</div></h1><section class="main__sub-section" id="interface.config-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="interface.config-mixin-./src/App.scss:mixins:enableActivity"><h3 class="item__heading"><a class="item__name" href="#mixin-./src/App.scss:mixins:enableActivity">./src/App.scss:mixins:enableActivity</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin ./src/App.scss:mixins:enableActivity() { 
+  &amp; {
+    position: relative;
+    z-index: 9001;
+    outline: 1px solid gold;
+  }
+
+  /// considering these i&#39;d assume they have nothing to do with each other and
+  /// &quot;active&quot; may be styled generally elsewhere in the global namespace.
+  &amp;.button.active {
+    content: &#39;who knows if anything reached the global namespace?&#39;
+  }
+
+  /// specific and focused.
+  &amp;[class*=&#39;button&#39;][class*=&#39;active&#39;] {
+    outline: 1px solid gold;
+  }
+ }" data-collapsed="@mixin ./src/App.scss:mixins:enableActivity() { ... }"><code>@mixin ./src/App.scss:mixins:enableActivity() { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="interface.config-mixin-./src/App.scss:mixins:enableInputField"><h3 class="item__heading"><a class="item__name" href="#mixin-./src/App.scss:mixins:enableInputField">./src/App.scss:mixins:enableInputField</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin ./src/App.scss:mixins:enableInputField() { 
+  &amp;[type] {
+    padding: 0.45rem 0 0.45rem 0.45rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    width: 100%;
+    outline: 1px solid transparent;
+  }
+
+  &amp;[class*=&#39;geo&#39;] {
+    outline: 1px solid red;
+  }
+ }" data-collapsed="@mixin ./src/App.scss:mixins:enableInputField() { ... }"><code>@mixin ./src/App.scss:mixins:enableInputField() { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="interface.config-mixin-./src/App.scss:mixins:enableList"><h3 class="item__heading"><a class="item__name" href="#mixin-./src/App.scss:mixins:enableList">./src/App.scss:mixins:enableList</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin ./src/App.scss:mixins:enableList() { 
+  &amp; {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &amp; li {
+  }
+
+  &amp; li button {
+    width: 100%;
+    border: none;
+    padding: 0.25rem 0;
+    cursor: pointer;
+    outline: 1px solid transparent;
+    background-color: #000;
+    color: #fff;
+  }
+ }" data-collapsed="@mixin ./src/App.scss:mixins:enableList() { ... }"><code>@mixin ./src/App.scss:mixins:enableList() { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section></section></section><section class="main__section"><h1 class="main__heading" id="interface.parts"><div class="container">interface.parts</div></h1><section class="main__sub-section" id="interface.parts-css"><h2 class="main__heading--secondary"><div class="container">css</div></h2><section class="main__item container item" id="interface.parts-css-./src/App.scss:tags:html"><h3 class="item__heading"><a class="item__name" href="#css-./src/App.scss:tags:html">./src/App.scss:tags:html</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>./src/App.scss:tags:html {
+  // outline: 1px solid teal;
+}</code>" data-collapsed="./src/App.scss:tags:html { ... }"><code>./src/App.scss:tags:html { ... }</code></pre></div></section><section class="main__item container item" id="interface.parts-css-./src/App.scss:tags:body"><h3 class="item__heading"><a class="item__name" href="#css-./src/App.scss:tags:body">./src/App.scss:tags:body</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>./src/App.scss:tags:body {
+  margin: 0;
+}</code>" data-collapsed="./src/App.scss:tags:body { ... }"><code>./src/App.scss:tags:body { ... }</code></pre></div></section><section class="main__item container item" id="interface.parts-css-./src/App.scss:tags:button"><h3 class="item__heading"><a class="item__name" href="#css-./src/App.scss:tags:button">./src/App.scss:tags:button</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>./src/App.scss:tags:button {
+  @include enableActivity();
+}</code>" data-collapsed="./src/App.scss:tags:button { ... }"><code>./src/App.scss:tags:button { ... }</code></pre></div></section><section class="main__item container item" id="interface.parts-css-./src/App.scss:tags:input"><h3 class="item__heading"><a class="item__name" href="#css-./src/App.scss:tags:input">./src/App.scss:tags:input</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>./src/App.scss:tags:input {
+  @include enableInputField();
+}</code>" data-collapsed="./src/App.scss:tags:input { ... }"><code>./src/App.scss:tags:input { ... }</code></pre></div></section><section class="main__item container item" id="interface.parts-css-./src/App.scss:tags:lists"><h3 class="item__heading"><a class="item__name" href="#css-./src/App.scss:tags:lists">./src/App.scss:tags:lists</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>./src/App.scss:tags:lists {
+  @include enableList();
+}</code>" data-collapsed="./src/App.scss:tags:lists { ... }"><code>./src/App.scss:tags:lists { ... }</code></pre></div></section><section class="main__item container item" id="interface.parts-css-./src/index.scss:tags:li"><h3 class="item__heading"><a class="item__name" href="#css-./src/index.scss:tags:li">./src/index.scss:tags:li</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>./src/index.scss:tags:li {
+  line-height: 0.725rem;
+}</code>" data-collapsed="./src/index.scss:tags:li { ... }"><code>./src/index.scss:tags:li { ... }</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="interfaces"><div class="container">interfaces</div></h1><section class="main__sub-section" id="interfaces-css"><h2 class="main__heading--secondary"><div class="container">css</div></h2><section class="main__item container item" id="interfaces-css-./src/App.scss:tags:footer"><h3 class="item__heading"><a class="item__name" href="#css-./src/App.scss:tags:footer">./src/App.scss:tags:footer</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>./src/App.scss:tags:footer {
+  position: absolute;
+  z-index: 9999;
+  bottom: 0;
+
+  width: 100%;
+  margin: {
+    bottom: 0.25rem;
+  }
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  border-top: 2px solid teal;
+  border-bottom: 2px solid teal;
+
+  font: {
+    size: 0.5rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  ul li {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  a {
+    line-height: 0;
+    display: block;
+    width: 100%;
+    border-bottom: 3px double purple;
+
+    color: white;
+    text-decoration: none;
+    text-shadow: 0px 0px 3px black;
+
+    &amp;:hover {
+      color: white;
+      border-bottom: 3px double orange;
+    }
+
+    &amp;:focus,
+    &amp;:active {
+      outline: 1px solid gold;
+    }
+  }
+}</code>" data-collapsed="./src/App.scss:tags:footer { ... }"><code>./src/App.scss:tags:footer { ... }</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-css"><h2 class="main__heading--secondary"><div class="container">css</div></h2><section class="main__item container item" id="undefined-css-App.css"><h3 class="item__heading"><a class="item__name" href="#css-App.css">App.css</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>App.css {
+  content: &#39;who knows if anything reached the global namespace?&#39;
+}</code>" data-collapsed="App.css { ... }"><code>App.css { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>considering these i&#39;d assume they have nothing to do with each other and &quot;active&quot; may be styled generally elsewhere in the global namespace.</p></div></section><section class="main__item container item" id="undefined-css-App.css"><h3 class="item__heading"><a class="item__name" href="#css-App.css">App.css</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>App.css {
+  outline: 1px solid gold;
+}</code>" data-collapsed="App.css { ... }"><code>App.css { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>specific and focused.</p></div></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <span class="project-info__name">Chordlike</span><!-- Version --> <span class="project-info__version">- v0.0.0-novel.0</span><!-- License --> <span class="project-info__license">, under WTFPL</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>

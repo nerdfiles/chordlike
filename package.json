@@ -66,6 +66,7 @@
   },
   "devDependencies": {
     "es6-plato": "^1.2.3",
-    "jest-html-reporter": "^3.7.0"
+    "jest-html-reporter": "^3.7.0",
+    "specificity-graph": "^0.1.7"
   }
 }
