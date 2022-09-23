@@ -131,14 +131,15 @@ ol,
 footer {
 
   position: absolute;
-  width: 100%;
+  z-index: 9999;
   bottom: 0;
+
+  width: 100%;
   margin: {
     bottom: 0.25rem;
   }
   padding-top: .25rem;
   padding-bottom: .25rem;
-
   border-top: 2px solid teal;
   border-bottom: 2px solid teal;
 
