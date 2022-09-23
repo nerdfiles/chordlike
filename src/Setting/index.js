@@ -44,7 +44,7 @@ const Setting = (props) => {
    * @constant
    * @default
    */
-  const CLASSNAME = props?.name === props?.active
+  const CLASSNAME = props && (props.name === props.active)
     ? ACTIVE_CLASS
     : EMPTY_CLASS
 
@@ -52,21 +52,24 @@ const Setting = (props) => {
    * @constant
    * @default
    */
-  const TITLE = [
-    'setting: ',
-    props?.name
-  ].join(GLUE)
+  const NAME = props && props.name
+
+  /**
+   * @constant
+   * @default
+   */
+  const TITLE = ['setting: ', NAME].join(GLUE)
 
   return (
     <button
       className={CLASSNAME}
       onClick={(e) => {
-        parser(props?.name, props?.setMode)
+        parser(props && props.name, props && props.setMode)
       }}
       role='menuitem'
       title={TITLE}
     >
-      {props?.name}
+      {props && props.name}
     </button>
   )
 }

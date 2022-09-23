@@ -20,7 +20,7 @@ const Input = (props) => {
   const CLASSNAME = [
     'm-view--input',
     '__',
-    props?.name,
+    props && props.name,
     '__'
   ].join(GLUE)
 
@@ -30,11 +30,11 @@ const Input = (props) => {
       htmlFor='chord-input'
     >
       <input
-        aria-required={true}
+        aria-required
         className={CLASSNAME}
         id='chord-input'
         name='chord-input'
-        placeholder={props?.name}
+        placeholder={props && props.name}
         required
         title='chord input'
         type='text'

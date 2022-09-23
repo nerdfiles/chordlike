@@ -110,7 +110,7 @@ const Chordlike = (props) => {
   ]
 
   return (
-    <>
+    <div>
       <div className='m-view--dashboard__default__'>
         <Input
           name={MODE_SETTING}
@@ -122,27 +122,27 @@ const Chordlike = (props) => {
         role='menu'
       >
         {
-          INTERFACE_MENU?.length
-          ? INTERFACE_MENU.map((el, index) => {
-            return (
+          INTERFACE_MENU && INTERFACE_MENU.length
+            ? INTERFACE_MENU.map((el, index) => {
+              return (
+                <li
+                  key={index}
+                  className='m-view--listing__default__'
+                  role='none'
+                >
+                  {el}
+                </li>
+              )
+            }) : (
               <li
-                key={index}
-                className='m-view--listing__default__'
-                role='none'
+                className='m-view--listing__empty__'
               >
-                {el}
+                no interface items available
               </li>
             )
-          }) : (
-            <li
-              className='m-view--listing__empty__'
-            >
-              no interface items available
-            </li>
-          )
         }
       </ul>
-    </>
+    </div>
   )
 }
 
