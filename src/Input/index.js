@@ -39,14 +39,13 @@ const Input = (props) => {
    * @param {Event} event - .
    */
   const onChangeHandler = (event) => {
-    const DEFAULT_OP = '+'
     const VALUE = event && event.target && event.target.value
     const PARTS = VALUE.split(UNGLUE)
     const DATA = PARTS[PARTS.length - 1]
     const DATA_INPUT = Number(DATA)
     const STORE = []
 
-    // grouping input numbers until there's a NaN. it ain't smart and it ain't
+    // grouping input numbers until there's a NaN. it ain't smart and it ain't 
     // fast but it also ain't cheap.
     if (PARTS.length && isNaN(DATA_INPUT)) {
       const OP_CODE = PARTS && PARTS.splice(PARTS.length-1, 1)
@@ -56,24 +55,21 @@ const Input = (props) => {
       })
 
       STORE.push([OP_CODE, outcome])
+      //STORE.push(outcome)
     }
 
-    const OPERATOR_POSITION = 1
+    // @todo gettin' hairy
     const EXPRESSION = STORE && STORE.length && STORE[0][1]
-    log(EXPRESSION)
-    const EX = EXPRESSION && EXPRESSION.split(UNGLUE)
-    log(EX)
-    const OP_CHAR = EX[OPERATOR_POSITION] || DEFAULT_OP
-    log(OP_CHAR)
+    // if we drag out this OP_CODE it runs a bit slow or captures partial 
+    // strings which get computed in passing (side-effects, go figure).
+    const OP_CHAR = '+'
     const OPERANDS = EXPRESSION && EXPRESSION.split(OP_CHAR)
-    log(OPERANDS)
 
     // will do nothing if computer can't split by the input in question
     if (OPERANDS && OPERANDS.length > 1) {
       const leftOperand = Number(OPERANDS[0])
       const rightOperand = Number(OPERANDS[1])
       const OUTPUT = leftOperand + rightOperand
-      log(OUTPUT)
 
       SETINPUT(OUTPUT)
     }
