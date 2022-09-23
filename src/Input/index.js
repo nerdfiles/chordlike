@@ -37,27 +37,27 @@ const Input = (props) => {
    */
   const onChangeHandler = (event) => {
     const VALUE = event && event.target && event.target.value
-    const ENTRY_VALUE = VALUE.split(UNGLUE)
-    const CURRENT_POSITION = ENTRY_VALUE.length - 1
-    const CURSOR = ENTRY_VALUE[CURRENT_POSITION]
-    const DATA_INPUT = Number(CURSOR)
-    const STORE = []
-    if (ENTRY_VALUE.length && isNaN(DATA_INPUT)) {
-      const outcome = ENTRY_VALUE.reduce((accumulatorRef, currentRef) => {
+    const str = VALUE.split(UNGLUE)
+    const curr = str[str.length - 1]
+    const t = Number(curr)
+    const col = []
+    if (str.length && isNaN(t)) {
+      const operator = str && str.splice(str.length-1, 1)
+      const outcome = str.reduce((accumulatorRef, currentRef) => {
         return accumulatorRef + currentRef
       })
-      STORE.push(outcome)
+      col.push(outcome)
     }
 
     // @todo gettin' hairy
-    const EXPRESSION = STORE[0]
-    const OP_CHAR = '+'
-    const OPERANDS = EXPRESSION && EXPRESSION.split(OP_CHAR)
-    if (OPERANDS && OPERANDS.length > 1) {
-      const leftOperand = Number(OPERANDS[0])
-      const rightOperand = Number(OPERANDS[1])
-      const OUTPUT = leftOperand + rightOperand
-      SETINPUT(OUTPUT)
+    const d = col[0]
+    const by = '+'
+    const y = d && d.split(by)
+    if (y && y.length > 1) {
+      const leftOperand = Number(y[0])
+      const rightOperand = Number(y[1])
+      const o = leftOperand + rightOperand
+      SETINPUT(o)
     }
 
     event.preventDefault()
