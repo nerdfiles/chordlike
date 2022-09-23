@@ -1,7 +1,7 @@
 /**
  * @filepath ./src/Input/index.js
  */
-import { useEffect, useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 const log = console.log
 
 /**
@@ -55,23 +55,65 @@ const Input = (props) => {
       })
 
       STORE.push([OP_CODE, outcome])
-      //STORE.push(outcome)
     }
 
-    // @todo gettin' hairy
+    const PLUS_OP = '+'
+    const MINUS_OP = '-'
+    const DIVIDE_OP = '%'
+    const MULTIPLY_OP = '*'
     const EXPRESSION = STORE && STORE.length && STORE[0][1]
-    // if we drag out this OP_CODE it runs a bit slow or captures partial 
-    // strings which get computed in passing (side-effects, go figure).
-    const OP_CHAR = '+'
+    const OP_TEMP = EXPRESSION && EXPRESSION.split('')
+    const OP_CHAR = OP_TEMP && OP_TEMP.length && OP_TEMP.filter((i, k) => {
+      return (
+        i === PLUS_OP ||
+        i === MINUS_OP ||
+        i === DIVIDE_OP ||
+        i === MULTIPLY_OP
+      )
+    })
     const OPERANDS = EXPRESSION && EXPRESSION.split(OP_CHAR)
+    const isWellFormed = OPERANDS && OPERANDS.length > 1
+    const _OP = OP_CHAR[0]
 
-    // will do nothing if computer can't split by the input in question
-    if (OPERANDS && OPERANDS.length > 1) {
-      const leftOperand = Number(OPERANDS[0])
-      const rightOperand = Number(OPERANDS[1])
-      const OUTPUT = leftOperand + rightOperand
+    switch (_OP) {
+      case PLUS_OP:
+        if (isWellFormed) {
+          const leftOperand = Number(OPERANDS[0])
+          const rightOperand = Number(OPERANDS[1])
+          const OUTPUT = leftOperand + rightOperand
+          SETINPUT(OUTPUT)
+        }
 
-      SETINPUT(OUTPUT)
+        break
+      case MINUS_OP:
+        if (isWellFormed) {
+          const leftOperand = Number(OPERANDS[0])
+          const rightOperand = Number(OPERANDS[1])
+          const OUTPUT = leftOperand - rightOperand
+          SETINPUT(OUTPUT)
+        }
+
+        break
+      case DIVIDE_OP:
+        if (isWellFormed) {
+          const leftOperand = Number(OPERANDS[0])
+          const rightOperand = Number(OPERANDS[1])
+          const OUTPUT = leftOperand / rightOperand
+          SETINPUT(OUTPUT)
+        }
+
+        break
+      case MULTIPLY_OP:
+        if (isWellFormed) {
+          const leftOperand = Number(OPERANDS[0])
+          const rightOperand = Number(OPERANDS[1])
+          const OUTPUT = leftOperand * rightOperand
+          SETINPUT(OUTPUT)
+        }
+
+      default:
+        log('◯ nil')
+        break
     }
 
     event.preventDefault()
