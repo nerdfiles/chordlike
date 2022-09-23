@@ -78,12 +78,12 @@ const Chordlike = (props) => {
    */
   const CLASSNAME = 'm-view--list__default__'
 
-  const getSetting = (s, m, f) => {
+  const getSetting = (occasion, name, callback) => {
     return (
       <Setting
-        active={s}
-        name={m}
-        setMode={f}
+        active={occasion}
+        name={name}
+        setMode={callback}
       />
     )
   }
