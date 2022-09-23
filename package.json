@@ -26,6 +26,7 @@
     "$eject": "npm run eject",
     "$publish": "cd build && echo 'sleepy-operation.surge.sh' >> CNAME && surge .",
     "#open": "vim $(ack '@' src -l | percol)",
+    "#report": "./node_modules/.bin/es6-plato -r -l .jshintrc -e .eslintrc -d report/complexity src",
     "#help": "npm run $(echo \"$(npm run)\" | percol)",
     "#install/ack": "brew install ack",
     "#install/percol": "brew install percol",
@@ -48,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "es6-plato": "^1.2.3"
   }
 }
