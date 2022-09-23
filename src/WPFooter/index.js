@@ -25,6 +25,17 @@ const WPFooter = (props) => {
           className='m-view--listing__default__'
         >
           <a
+            title='code coverage'
+            href='https://sleepy-operation.surge.sh/report/coverage'
+          >
+            coverage
+          </a>
+        </li>
+
+        <li
+          className='m-view--listing__default__'
+        >
+          <a
             title='static code analysis'
             href='https://sleepy-operation.surge.sh/report/complexity/'
           >
