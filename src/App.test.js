@@ -11,7 +11,7 @@ test('renders repo link', () => {
   expect(linkElement).toBeInTheDocument()
 })
 
-test('check for menu', () => {
+test('check the menu', () => {
   render(<App />)
   const menu = screen.getAllByRole('menuitem')
   const EMPTY = 0
