@@ -78,103 +78,105 @@ const Chordlike = (props) => {
    */
   const CLASSNAME = 'm-view--list__default__'
 
+  const DEFAULT_MODE_ITEM = (
+    <Setting
+      active={MODE_SETTING}
+      name={DEFAULT_MODE}
+      setMode={SETMODE}
+    />
+  )
+
+  const LOGIC_MODE_ITEM = (
+    <Setting
+      active={MODE_SETTING}
+      name={LOGIC_MODE}
+      setMode={SETMODE}
+    />
+  )
+
+  const TELEPHONE_MODE_ITEM = (
+    <Setting
+      active={MODE_SETTING}
+      name={TELEPHONE_MODE}
+      setMode={SETMODE}
+    />
+  )
+
+  const WEATHER_MODE_ITEM = (
+    <Setting
+      active={MODE_SETTING}
+      name={WEATHER_MODE}
+      setMode={SETMODE}
+    />
+  )
+
+  const LOCATION_MODE_ITEM = (
+    <Setting
+      active={MODE_SETTING}
+      name={LOCATION_MODE}
+      setMode={SETMODE}
+    />
+  )
+
+  const CLOCK_MODE_ITEM = (
+    <Setting
+      active={MODE_SETTING}
+      name={CLOCK_MODE}
+      setMode={SETMODE}
+    />
+  )
+
+  const WH_MODE_ITEM = (
+    <Setting
+      active={MODE_SETTING}
+      name={WH_MODE}
+      setMode={SETMODE}
+    />
+  )
+
+  const SEARCH_MODE_ITEM = (
+    <Setting
+      active={MODE_SETTING}
+      name={SEARCH_MODE}
+      setMode={SETMODE}
+    />
+  )
+
+  const INTERFACE = [
+    DEFAULT_MODE_ITEM,
+    LOGIC_MODE_ITEM,
+    TELEPHONE_MODE_ITEM,
+    WEATHER_MODE_ITEM,
+    LOCATION_MODE_ITEM,
+    CLOCK_MODE_ITEM,
+    WH_MODE_ITEM,
+    SEARCH_MODE_ITEM
+  ]
+
   return (
     <>
       <div className='m-view--dashboard__default__'>
-        <Input name={MODE_SETTING} />
+        <Input
+          name={MODE_SETTING}
+        />
       </div>
 
       <ul
         className={CLASSNAME}
         role='menu'
       >
-        <li
-          className='m-view--listing__default__'
-          role='none'
-        >
-          <Setting
-            active={MODE_SETTING}
-            name={DEFAULT_MODE}
-            setMode={SETMODE}
-          />
-        </li>
-
-        <li
-          className='m-view--listing__default__'
-          role='none'
-        >
-          <Setting
-            active={MODE_SETTING}
-            name={LOGIC_MODE}
-            setMode={SETMODE}
-          />
-        </li>
-
-        <li
-          className='m-view--listing__default__'
-          role='none'
-        >
-          <Setting
-            active={MODE_SETTING}
-            name={TELEPHONE_MODE}
-            setMode={SETMODE}
-          />
-        </li>
-
-        <li
-          className='m-view--listing__default__'
-          role='none'
-        >
-          <Setting
-            active={MODE_SETTING}
-            name={WEATHER_MODE}
-            setMode={SETMODE}
-          />
-        </li>
-
-        <li
-          className='m-view--listing__default__'
-          role='none'
-        >
-          <Setting
-            active={MODE_SETTING}
-            name={LOCATION_MODE}
-            setMode={SETMODE}
-          />
-        </li>
-
-        <li
-          className='m-view--listing__default__'
-          role='none'
-        >
-          <Setting
-            active={MODE_SETTING}
-            name={CLOCK_MODE}
-            setMode={SETMODE}
-          />
-        </li>
-
-        <li
-          className='m-view--listing__default__'
-          role='none'
-        >
-          <Setting
-            active={MODE_SETTING}
-            name={WH_MODE}
-            setMode={SETMODE}
-          />
-        </li>
-
-        <li
-          className='m-view--listing__default__'
-          role='none'
-        >
-          <Setting
-            active={MODE_SETTING}
-            name={SEARCH_MODE}
-            setMode={SETMODE}
-          />
-        </li>
+        {INTERFACE?.length
+          ? INTERFACE.map((el) => {
+            return (
+              <li
+                className='m-view--listing__default__'
+                role='none'
+              >
+                {el}
+              </li>
+            )
+          }) : <li>no interface items available</li>
+        }
       </ul>
     </>
   )
