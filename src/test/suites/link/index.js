@@ -1,11 +1,16 @@
 /* global expect, test */
+/**
+ * @filepath ./src/test/suites/link/index.js
+ */
 import { render, screen } from '@testing-library/react'
 import App from '../../../App'
 
-const links = () => {
+const link = () => {
   render(<App />)
   const linkElement = screen.getByText(/repo/i)
   expect(linkElement).toBeInTheDocument()
 }
 
-export default links
+export default link
+
+// EOF

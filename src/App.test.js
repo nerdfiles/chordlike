@@ -2,10 +2,10 @@
 /**
  * @filepath ./src/App.test.js
  */
-import links from './test/suites/links'
+import link from './test/suites/link'
 import menu from './test/suites/menu'
 
-test('renders repo link', links)
-test('check the menu', menu)
+test('renders repo link', link)
+test('renders menu', menu)
 
 // EOF
