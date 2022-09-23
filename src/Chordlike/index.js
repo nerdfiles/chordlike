@@ -3,7 +3,7 @@
  */
 import { useState } from 'react'
 import Setting from '../Setting'
-import Input from './Input'
+import Input from '../Input'
 
 /**
  * @name Chordlike

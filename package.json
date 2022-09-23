@@ -16,12 +16,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "$start": "npm run start",
+    "$build": "react-scripts build",
+    "$test": "react-scripts test",
+    "$eject": "react-scripts eject",
     "help": "npm run $(echo \"$(npm run)\" | percol)",
-    "publish": "cd build && echo 'sleepy-operation.surge.sh' >> CNAME && surge .",
-    "open": "vim $(ack '@' src -l | percol)",
+    "$publish": "cd build && echo 'sleepy-operation.surge.sh' >> CNAME && surge .",
+    "$open": "vim $(ack '@' src -l | percol)",
     "install/ack": "brew install ack",
     "install/percol": "brew install percol",
     "install/surge": "npm install -g surge "
