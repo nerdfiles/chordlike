@@ -6,7 +6,11 @@
   "author": "aha <patagnome@protonmail.com>",
   "license": "WTFPL",
   "jest": {
-    "coverageReporters": ["json", "html"]
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "html"
+    ]
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -57,6 +61,7 @@
     ]
   },
   "devDependencies": {
-    "es6-plato": "^1.2.3"
+    "es6-plato": "^1.2.3",
+    "jest-html-reporter": "^3.7.0"
   }
 }
