@@ -38,7 +38,7 @@ const Input = (props) => {
   const onChangeHandler = (event) => {
     const VALUE = event && event.target && event.target.value
     const PARTS = VALUE.split(UNGLUE)
-    const DATA = PARTS[PARTS.length-1]
+    const DATA = PARTS[PARTS.length - 1]
     const DATA_INPUT = Number(DATA)
     const STORE = []
     if (PARTS.length && isNaN(DATA_INPUT)) {
