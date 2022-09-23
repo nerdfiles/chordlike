@@ -1,3 +1,4 @@
+/* global expect, test */
 /**
  * @filepath ./src/App.test.js
  */
