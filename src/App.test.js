@@ -2,21 +2,10 @@
 /**
  * @filepath ./src/App.test.js
  */
-import { render, screen } from '@testing-library/react'
-import App from './App'
+import links from './test/suites/links'
+import menu from './test/suites/menu'
 
-test('renders repo link', () => {
-  render(<App />)
-  const linkElement = screen.getByText(/repo/i)
-  expect(linkElement).toBeInTheDocument()
-})
-
-test('check the menu', () => {
-  render(<App />)
-  const menu = screen.getAllByRole('menuitem')
-  const EMPTY = 0
-  const MENU_TOTAL = menu?.length
-  expect(MENU_TOTAL).not.toBe(EMPTY)
-})
+test('renders repo link', links)
+test('check the menu', menu)
 
 // EOF
