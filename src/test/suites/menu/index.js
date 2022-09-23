@@ -1,6 +1,6 @@
 /* global expect, test */
 /**
- * @filepath ./src/test/suites/link/index.js
+ * @filepath ./src/test/suites/menu/index.js
  */
 import { render, screen } from '@testing-library/react'
 import App from '../../../App'
