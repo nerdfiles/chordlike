@@ -131,7 +131,13 @@ const Chordlike = (props) => {
                 {el}
               </li>
             )
-          }) : <li>no interface items available</li>
+          }) : (
+            <li
+              className='m-view--listing__empty__'
+            >
+              no interface items available
+            </li>
+          )
         }
       </ul>
     </>
