@@ -7,8 +7,8 @@
   background-color: #000;
 }
 
-/// @name enableActivity
-/// @group mixins
+/// @name ./src/App.scss:mixins:enableActivity
+/// @group config
 @mixin enableActivity () {
   & {
     position: relative;
@@ -28,8 +28,8 @@
   }
 }
 
-/// @name enableInputField
-/// @group mixins
+/// @name ./src/App.scss:mixins:enableInputField
+/// @group config
 @mixin enableInputField () {
   &[type] {
     padding: 0.45rem 0 0.45rem 0.45rem;
@@ -45,8 +45,8 @@
   }
 }
 
-/// @name enableList
-/// @group mixins
+/// @name ./src/App.scss:mixins:enableList
+/// @group config
 @mixin enableList () {
   & {
     margin: 0;
@@ -55,9 +55,6 @@
   }
 
   & li {
-    line-height: 0;
-    position: relative;
-    z-index: 9000;
   }
 
   & li button {
@@ -71,32 +68,32 @@
   }
 }
 
-/// @name html
-/// @group tags
+/// @name ./src/App.scss:tags:html
+/// @group interface.parts
 html {
   outline: 1px solid teal;
 }
 
-/// @name body
-/// @group tags
+/// @name ./src/App.scss:tags:body
+/// @group interface.parts
 body {
   margin: 0;
 }
 
-/// @name button
-/// @group tags
+/// @name ./src/App.scss:tags:button
+/// @group interface.parts
 button {
   @include enableActivity();
 }
 
-/// @name input
-/// @group tags
+/// @name ./src/App.scss:tags:input
+/// @group interface.parts
 input {
   @include enableInputField();
 }
 
-/// @name lists
-/// @group classes
+/// @name ./src/App.scss:tags:lists
+/// @group lists
 ul,
 ol,
 .m-view--list,
@@ -104,10 +101,9 @@ ol,
   @include enableList();
 }
 
+/// @name ./src/App.scss:tags:footer
+/// @group footers
 footer {
-  ul li {
-    line-height: 1rem;
-  }
   a {
     display: block;
     padding: 0.5rem;
