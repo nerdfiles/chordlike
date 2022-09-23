@@ -47,11 +47,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">62.42</p>
+      <p class="stat">55.02</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">106</p>
+      <p class="stat">148</p>
     </div>
   </div>
   <div class="row historical">
@@ -65,11 +65,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">20.37</p>
+      <p class="stat">37.14</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">0.51</p>
+      <p class="stat">0.89</p>
     </div>
   </div>
 </div>
@@ -95,7 +95,7 @@
     <textarea id="file-source" class="col-md-12">/**
  * @filepath ./src/Input/index.js
  */
-import { useEffect, useState, useRef } from &#039;react&#039;
+import { useState, useRef } from &#039;react&#039;
 const log = console.log
 
 /**
@@ -149,23 +149,65 @@ const Input = (props) =&gt; {
       })
 
       STORE.push([OP_CODE, outcome])
-      //STORE.push(outcome)
     }
 
-    // @todo gettin&#039; hairy
+    const PLUS_OP = &#039;+&#039;
+    const MINUS_OP = &#039;-&#039;
+    const DIVIDE_OP = &#039;%&#039;
+    const MULTIPLY_OP = &#039;*&#039;
     const EXPRESSION = STORE &amp;&amp; STORE.length &amp;&amp; STORE[0][1]
-    // if we drag out this OP_CODE it runs a bit slow or captures partial 
-    // strings which get computed in passing (side-effects, go figure).
-    const OP_CHAR = &#039;+&#039;
+    const OP_TEMP = EXPRESSION &amp;&amp; EXPRESSION.split(&#039;&#039;)
+    const OP_CHAR = OP_TEMP &amp;&amp; OP_TEMP.length &amp;&amp; OP_TEMP.filter((i, k) =&gt; {
+      return (
+        i === PLUS_OP ||
+        i === MINUS_OP ||
+        i === DIVIDE_OP ||
+        i === MULTIPLY_OP
+      )
+    })
     const OPERANDS = EXPRESSION &amp;&amp; EXPRESSION.split(OP_CHAR)
+    const isWellFormed = OPERANDS &amp;&amp; OPERANDS.length &gt; 1
+    const _OP = OP_CHAR[0]
 
-    // will do nothing if computer can&#039;t split by the input in question
-    if (OPERANDS &amp;&amp; OPERANDS.length &gt; 1) {
-      const leftOperand = Number(OPERANDS[0])
-      const rightOperand = Number(OPERANDS[1])
-      const OUTPUT = leftOperand + rightOperand
+    switch (_OP) {
+      case PLUS_OP:
+        if (isWellFormed) {
+          const leftOperand = Number(OPERANDS[0])
+          const rightOperand = Number(OPERANDS[1])
+          const OUTPUT = leftOperand + rightOperand
+          SETINPUT(OUTPUT)
+        }
 
-      SETINPUT(OUTPUT)
+        break
+      case MINUS_OP:
+        if (isWellFormed) {
+          const leftOperand = Number(OPERANDS[0])
+          const rightOperand = Number(OPERANDS[1])
+          const OUTPUT = leftOperand - rightOperand
+          SETINPUT(OUTPUT)
+        }
+
+        break
+      case DIVIDE_OP:
+        if (isWellFormed) {
+          const leftOperand = Number(OPERANDS[0])
+          const rightOperand = Number(OPERANDS[1])
+          const OUTPUT = leftOperand / rightOperand
+          SETINPUT(OUTPUT)
+        }
+
+        break
+      case MULTIPLY_OP:
+        if (isWellFormed) {
+          const leftOperand = Number(OPERANDS[0])
+          const rightOperand = Number(OPERANDS[1])
+          const OUTPUT = leftOperand * rightOperand
+          SETINPUT(OUTPUT)
+        }
+
+      default:
+        log(&#039;◯ nil&#039;)
+        break
     }
 
     event.preventDefault()
