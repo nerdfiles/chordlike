@@ -39,7 +39,7 @@ const WPFooter = (props) => {
             title='unit tests'
             href='https://sleepy-operation.surge.sh/report/ut-report/'
           >
-            unit tests
+            unit
           </a>
         </li>
 
@@ -72,7 +72,7 @@ const WPFooter = (props) => {
             title='accessibility of and for the accessible'
             href='https://wave.webaim.org/report#/https://sleepy-operation.surge.sh/'
           >
-            audit <abbr title='accessibility'>#a11y</abbr>
+            <abbr title='accessibility'>#a11y</abbr>
           </a>
         </li>
 
