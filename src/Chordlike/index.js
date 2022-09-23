@@ -6,6 +6,22 @@ import Setting from '../Setting'
 import Input from '../Input'
 
 /**
+ * @name getSetting
+ * @param {} occasion
+ * @param {} name
+ * @param {} callback
+ */
+const getSetting = (occasion, name, callback) => {
+  return (
+    <Setting
+      active={occasion}
+      name={name}
+      setMode={callback}
+    />
+  )
+}
+
+/**
  * @name Chordlike
  * @description that we're configuring the input box for mobile, assistive
  * tools.
@@ -77,16 +93,6 @@ const Chordlike = (props) => {
    * @default
    */
   const CLASSNAME = 'm-view--list__default__'
-
-  const getSetting = (occasion, name, callback) => {
-    return (
-      <Setting
-        active={occasion}
-        name={name}
-        setMode={callback}
-      />
-    )
-  }
 
   /**
    * @constant
