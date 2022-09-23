@@ -48,6 +48,15 @@ const Setting = (props) => {
     ? ACTIVE_CLASS
     : EMPTY_CLASS
 
+  /**
+   * @constant
+   * @default
+   */
+  const TITLE = [
+    'setting: ',
+    props?.name
+  ].join(GLUE)
+
   return (
     <button
       className={CLASSNAME}
@@ -55,10 +64,7 @@ const Setting = (props) => {
         parser(props?.name, props?.setMode)
       }}
       role='menuitem'
-      title={[
-        'setting: ',
-        props?.name
-      ].join(GLUE)}
+      title={TITLE}
     >
       {props?.name}
     </button>
