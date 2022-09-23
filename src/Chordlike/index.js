@@ -32,7 +32,7 @@ const Chordlike = (props) => {
    * @constant
    * @default
    */
-  const [MODE, SETMODE] = useState('math')
+  const [mode, setMode] = useState('math')
 
   /**
    * @constant
@@ -86,7 +86,7 @@ const Chordlike = (props) => {
    * @constant
    * @default
    */
-  const MODE_SETTING = MODE || DEFAULT_MODE
+  const MODE_SETTING = mode || DEFAULT_MODE
 
   /**
    * @constant
@@ -99,14 +99,14 @@ const Chordlike = (props) => {
    * @default
    */
   const INTERFACE = [
-    getSetting(MODE_SETTING, DEFAULT_MODE, SETMODE),
-    getSetting(MODE_SETTING, LOGIC_MODE, SETMODE),
-    getSetting(MODE_SETTING, TELEPHONE_MODE, SETMODE),
-    getSetting(MODE_SETTING, WEATHER_MODE, SETMODE),
-    getSetting(MODE_SETTING, LOCATION_MODE, SETMODE),
-    getSetting(MODE_SETTING, CLOCK_MODE, SETMODE),
-    getSetting(MODE_SETTING, WH_MODE, SETMODE),
-    getSetting(MODE_SETTING, SEARCH_MODE, SETMODE)
+    getSetting(MODE_SETTING, DEFAULT_MODE, setMode),
+    getSetting(MODE_SETTING, LOGIC_MODE, setMode),
+    getSetting(MODE_SETTING, TELEPHONE_MODE, setMode),
+    getSetting(MODE_SETTING, WEATHER_MODE, setMode),
+    getSetting(MODE_SETTING, LOCATION_MODE, setMode),
+    getSetting(MODE_SETTING, CLOCK_MODE, setMode),
+    getSetting(MODE_SETTING, WH_MODE, setMode),
+    getSetting(MODE_SETTING, SEARCH_MODE, setMode)
   ]
 
   return (
