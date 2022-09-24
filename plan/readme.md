@@ -85,6 +85,8 @@ like them:
 2. *does software mean being constantly present?*
 3. *can software see nothing?*
 
+### 
+
 1. scaleability☁
 2. evolvability☁
 3. discoverability☁
@@ -98,20 +100,25 @@ like them:
 8. incrementability (??)
 9. accessibility
    1. perceivability
-   2. (in)operosity
+   2. (in)operosity (agamben??); operability; usability
    3. comprehensibility/understandability
 	 4. robustness
-10. sustainability (??)
+10. sustainability (sustainability of the sustainable contra sustainability of
+    the [unsustainable])
+11. the "structure of the space of possibility" (manuel delanda); "describing
+    the possible" (mike amundsen); the possibility of the possible 
+12. `?? > purposeful > desirable > usable > useful > needful > ??`
 
 ## footnotes
 
 1. ♦ extension to ReST
 2. ☂ CALM extensions to ReST; or, consistency as logical monotonicity
-3. ☁ timbl, fielding, taylor, medividovic, dashofy
-4. ❤ [amundsen][mamund]
+3. ☁ timbl, roy fielding, richard taylor, ..., medividovic, dashofy
+4. ❤ mike [amundsen][mamund]
 
 [ovm]: https://mamund.site44.com/articles/objects-v-messages/index.html
 [mamund]: http://amundsen.com/articles/hypermedia-oriented-design/
 [kittler]: https://web.stanford.edu/class/history34q/readings/Kittler/There_is_No_Software.html
+[unsustainable]: https://hal.archives-ouvertes.fr/hal-03150750/file/Outer_Space_Expansive_Sustainable_Develo-1.pdf
 
 <!-- EOF -->
