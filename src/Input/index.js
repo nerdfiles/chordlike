@@ -2,6 +2,7 @@
  * @filepath ./src/Input/index.js
  */
 import { useState, useRef } from 'react'
+
 const log = console.log
 
 /**
@@ -9,6 +10,11 @@ const log = console.log
  * @default
  */
 const GLUE = ''
+
+/**
+ * @constant
+ * @default
+ */
 const UNGLUE = ''
 
 /**
@@ -45,11 +51,15 @@ const Input = (props) => {
     const DATA_INPUT = Number(DATA)
     const STORE = []
 
-    // grouping input numbers until there's a NaN. it ain't smart and it ain't 
+    // grouping input numbers until there's a NaN. it ain't smart and it ain't
     // fast but it also ain't cheap.
     if (PARTS.length && isNaN(DATA_INPUT)) {
-      const OP_CODE = PARTS && PARTS.splice(PARTS.length-1, 1)
+      const POS = PARTS.length - 1
+      const DEL = 1
+      const OP_CODE = PARTS && PARTS.splice(POS, DEL)
+
       log('💧 storing OP_CODE:', OP_CODE)
+
       const outcome = PARTS.reduce((accumulatorRef, currentRef) => {
         return accumulatorRef + currentRef
       })
@@ -74,7 +84,7 @@ const Input = (props) => {
 
       log('MEDIATYPE:', MEDIATYPE)
 
-      // ideally the 0th item of the array would only be a string, so ignore 
+      // ideally the 0th item of the array would only be a string, so ignore
       // that.
       //
       // [
@@ -88,7 +98,7 @@ const Input = (props) => {
       // a "message", we're "message-passing"[ovm]. fundamentally, the client
       // would be committed to a rational not unlike what we find in the "bitcoin"
       // concept, except that it's "harder," as it were: every request is
-      // committed to "running the same code" (between client and server, or in a 
+      // committed to "running the same code" (between client and server, or in a
       // peerless scenario). you and i know what "+" is. you and i know what "=" means.
       // but our knowledge does not guarantee faithful transmission, where here
       // we must employ rules to a specificity relevant to a logic ready-at-hand.
@@ -117,13 +127,14 @@ const Input = (props) => {
       // enable recognition of the meaning of definition immanent to the living
       // payload. a server could very well consider "3+3" to be a well-formed
       // bit of data to operate on. it might think "=" is no sweat. however,
-      // the payload may be ciphered to transformations of evolutionary 
+      // the payload may be ciphered to transformations of evolutionary
       // periodization such that relation operators co-determine the ingress
       // through which non-metacomputational selection aggregates to learnable
-      // compute (i.e., cloning; or, non-autorepresentational computational 
+      // compute (i.e., cloning; or, non-autorepresentational computational
       // immediacy; hyperparallelism from formal formlessness, etc.).
       //
       // [ovm]: https://mamund.site44.com/articles/objects-v-messages/index.html
+
       STORE.push(MEDIATYPE)
     }
 
@@ -180,7 +191,7 @@ const Input = (props) => {
           const OUTPUT = leftOperand * rightOperand
           SETINPUT(OUTPUT)
         }
-
+        break
       default:
         log('◯ nil')
         break

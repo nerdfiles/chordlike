@@ -179,25 +179,36 @@ footer {
   }
 }
 
+/// @name .accessibly-hide
+/// @group a11y
 .accessibly-hide {
   position: absolute;
   left: -9999px;
   z-index: -9999;
 }
 
+/// @name .m-view--headline__default__
+/// @group modules
 .m-view--headline__default__ {
   @extend .accessibly-hide;
 }
 
+/// @name .m-view--labeltext__default__
+/// @group modules
 .m-view--labeltext__default__ {
   @extend .accessibly-hide;
 }
 
+/// @name input[class*="m-view--input"]
+/// @group modules
 input[class*="m-view--input"] {
   text-align: right;
   padding: 0;
   margin: 0;
 }
+
+/// @name .m-view--output__default__
+/// @group modules
 .m-view--output__default__ {
   text-align: right;
   display: block;
