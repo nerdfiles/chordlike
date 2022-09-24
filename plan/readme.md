@@ -2,9 +2,9 @@
 
 chordlike is about WebChords. a WebChord is a concept i theorized when working
 on a different project, or perhaps even back when i started my first re-design
-of my first (self-hosted) webjournal (a weedy florilegium). fundamentally, the 
-concept fits into an ontology as a "norm" (so that we can start talking about 
-its existence among others). without digging into the ontological specificity 
+of my first (self-hosted) webjournal (a weedy florilegium). fundamentally, the
+concept fits into an ontology as a "norm" (so that we can start talking about
+its existence among others). without digging into the ontological specificity
 here, a "chord" is something like a `<input />` with super powers, but in
 truth, the locus of capability begins from the cursor and its "shadow" as it
 were: `_[_]`
@@ -78,22 +78,22 @@ through generic strings as real substance of universe.
 
 ## quality properties of web
 
-some questions hearkening to morton, by way of [kittler], or mcluhan, or someone 
+some questions hearkening to morton, by way of [kittler], or mcluhan, or someone
 like them:
 
 1. *is software better than the quality of software?*
 2. *does software mean being constantly present?*
 3. *can software see nothing?*
 
-### 
+### architectural targt
 
 1. scaleability☁
 2. evolvability☁
 3. discoverability☁
 4. specializability (??)
-5. concretizability: "[...] it is unrealistic to assume that a system has full 
-   access to the global state, e.g., that a process can observe the private 
-   variables of the other processes." (Abstraction Refinement for Games with 
+5. concretizability: "[...] it is unrealistic to assume that a system has full
+   access to the global state, e.g., that a process can observe the private
+   variables of the other processes." (Abstraction Refinement for Games with
    Incomplete Information. Rayna Dimitrova†, Bernd Finkbeiner)
 6. traceability (??)
 7. adjustability (??)
@@ -106,7 +106,7 @@ like them:
 10. sustainability (sustainability of the sustainable contra sustainability of
     the [unsustainable])
 11. the "structure of the space of possibility" (manuel delanda); "describing
-    the possible" (mike amundsen); the possibility of the possible 
+    the possible" (mike amundsen); the possibility of the possible
 12. `?? > purposeful > desirable > usable > useful > needful > ??`
 
 ## miscellany
@@ -121,10 +121,12 @@ like them:
 2. ☂ CALM extensions to ReST; or, consistency as logical monotonicity
 3. ☁ timbl, roy fielding, richard taylor, ..., medividovic, dashofy
 4. ❤ mike [amundsen][mamund]
+5. "semantics and model driven design patterns instantiation". kajsa, p..
 
 [ovm]: https://mamund.site44.com/articles/objects-v-messages/index.html
 [mamund]: http://amundsen.com/articles/hypermedia-oriented-design/
 [kittler]: https://web.stanford.edu/class/history34q/readings/Kittler/There_is_No_Software.html
 [unsustainable]: https://hal.archives-ouvertes.fr/hal-03150750/file/Outer_Space_Expansive_Sustainable_Develo-1.pdf
+[hypermedia]: https://www.semanticscholar.org/paper/Modeling-hypermedia-based-communication-Kryssanov-Kakusho/581772f99c7501f5991fba97157b3b9a1fce7099
 
 <!-- EOF -->
