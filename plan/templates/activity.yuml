@@ -1,5 +1,7 @@
-// {type:activity}
-// {generate:true}
+// {type: activity}
+// {generate: true}
 // {see: https://github.com/jaime-olivares/yuml-diagram/wiki#activity-diagram}
+
+(start)->(end)
 
 // EOF
