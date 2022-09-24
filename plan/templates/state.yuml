@@ -1,5 +1,18 @@
 // {type:state}
 // {generate:true}
+// @filepath ./plan/templates/state.yuml
+// @fileoverview _
+// @author aha <patagnome@protonmail.com>
+// @license wtfpl, version 2
+// @name state
+// @since 0.0.0-novel.0
+// @version 0.0.0-novel.0
+// @kind state
+// @todo none
+// @see https://github.com/jaime-olivares/yuml-diagram/wiki#state-diagram
+// @description a state diagram for the graphical language, uml, expressed
+// in yuml syntax.
+// @todo browse _
 
 (start)->(end)
 

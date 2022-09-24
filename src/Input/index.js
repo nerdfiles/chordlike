@@ -210,6 +210,8 @@ const Input = (props) => {
         aria-required
         className={CLASSNAME}
         id='chord-input'
+        itemScope
+        itemType='https://schema.org/WebChord'
         name='chord-input'
         onChange={onChangeHandler}
         placeholder={props && props.name}

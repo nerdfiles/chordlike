@@ -1,4 +1,20 @@
 // {type:sequence}
 // {generate:true}
+// @filepath ./plan/templates/sequence.yuml
+// @fileoverview _
+// @author aha <patagnome@protonmail.com>
+// @license wtfpl, version 2
+// @name sequence
+// @since 0.0.0-novel.0
+// @version 0.0.0-novel.0
+// @kind sequence
+// @todo none
+// @see https://github.com/jaime-olivares/yuml-diagram/wiki#sequence-diagram
+// @see https://annevankesteren.nl/2007/10/http-methods
+// @description a sequence diagram for the graphical language, uml, expressed
+// in yuml syntax.
+// @todo browse _
+
+[:NOUN1]VERB1>[:NOUN2]
 
 // EOF

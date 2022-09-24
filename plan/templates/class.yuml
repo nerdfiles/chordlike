@@ -1,4 +1,23 @@
 // {type:class}
 // {generate:true}
+// @filepath ./plan/templates/class.yuml
+// @fileoverview _
+// @author aha <patagnome@protonmail.com>
+// @license wtfpl, version 2
+// @name class
+// @since 0.0.0-novel.0
+// @version 0.0.0-novel.0
+// @kind class
+// @todo none
+// @see https://github.com/jaime-olivares/yuml-diagram/wiki#class-diagram
+// @see https://schema.org/Action
+// @description a class diagram for the graphical language, uml, expressed
+// in yuml syntax. note that a "task" would constitute an assembly of actions
+// or one action.
+// @todo browse _
+
+[itemtype: https://schema.org/Class]
+[⚙ Entity]->[🔡 Task]
+[⚙ Entity|➕ supersededBy|➖ potentialAction()]
 
 // EOF

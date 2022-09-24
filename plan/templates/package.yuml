@@ -1,4 +1,20 @@
 // {type:package}
 // {generate:true}
+// @filepath ./plan/templates/package.yuml
+// @fileoverview _
+// @author aha <patagnome@protonmail.com>
+// @license wtfpl, version 2
+// @name package
+// @since 0.0.0-novel.0
+// @version 0.0.0-novel.0
+// @kind package
+// @todo none
+// @see https://github.com/jaime-olivares/yuml-diagram/wiki#package-diagram
+// @description a package diagram for the graphical language, uml, expressed
+// in yuml syntax.
+// @todo browse _
+
+[📦 Thing]->[📦 Thing]
+[📦 Thing]-[itemtype: https://schema.org/Thing]
 
 // EOF

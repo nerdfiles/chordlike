@@ -1,4 +1,20 @@
 // {type:deployment}
 // {generate:true}
+// @filepath ./plan/templates/deployment.yuml
+// @fileoverview _
+// @author aha <patagnome@protonmail.com>
+// @license wtfpl, version 2
+// @name deployment
+// @since 0.0.0-novel.0
+// @version 0.0.0-novel.0
+// @kind deployment
+// @todo none
+// @see https://github.com/jaime-olivares/yuml-diagram/wiki#deployment-diagram
+// @description a deployment diagram for the graphical language, uml, expressed
+// in yuml syntax.
+// @todo browse _
+
+[🔌 Service A]-[🔌 Service B]
+[🔌 Service]-[itemtype: https://schema.org/WebAPI]
 
 // EOF

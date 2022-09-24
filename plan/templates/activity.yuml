@@ -1,7 +1,21 @@
 // {type: activity}
 // {generate: true}
 // {see: https://github.com/jaime-olivares/yuml-diagram/wiki#activity-diagram}
+// @filepath ./plan/templates/activity.yuml
+// @fileoverview _
+// @author aha <patagnome@protonmail.com>
+// @license wtfpl, version 2
+// @name activity
+// @since 0.0.0-novel.0
+// @version 0.0.0-novel.0
+// @kind activity
+// @todo none
+// @see https://github.com/jaime-olivares/yuml-diagram/wiki#activity-diagram
+// @description a activity diagram for the graphical language, uml, expressed
+// in yuml syntax.
+// @todo browse _
 
-(start)->(end)
+(start)-><a>[0⃣ loggedIn]->(🔒 /dashboard)
+<a>[0⃣ ~loggedIn]->(🔑 /login)->(end)
 
 // EOF

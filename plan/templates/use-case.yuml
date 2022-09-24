@@ -1,0 +1,21 @@
+// {type:usecase}
+// {direction:leftToRight}
+// {generate:true}
+// @filepath ./plan/templates/use-case.yuml
+// @fileoverview _
+// @author aha <patagnome@protonmail.com>
+// @license wtfpl, version 2
+// @name use-case
+// @since 0.0.0-novel.0
+// @version 0.0.0-novel.0
+// @kind use-case
+// @todo none
+// @see https://github.com/jaime-olivares/yuml-diagram/wiki#use-case-diagram
+// @description a use-case diagram for the graphical language, uml, expressed
+// in yuml syntax.
+// @todo browse _
+
+(context: https://schema.org/WebSite)
+[👤 Person]-(📃 Contact Page)
+
+// EOF
