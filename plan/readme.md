@@ -2,11 +2,12 @@
 
 chordlike is about WebChords. a WebChord is a concept i theorized when working
 on a different project, or perhaps even back when i started my first re-design
-of my webjournal (a weedy florilegium). fundamentally, the concept fits into
-an ontology as a "norm" (so that we can start talking about its existence among
-others). without digging into the ontological specificity here, a "chord" is
-something like a `<input />` with super powers, but in truth, the locus of
-capability begins from the cursor and its "shadow" as it were: _[_]
+of my first (self-hosted) webjournal (a weedy florilegium). fundamentally, the 
+concept fits into an ontology as a "norm" (so that we can start talking about 
+its existence among others). without digging into the ontological specificity 
+here, a "chord" is something like a `<input />` with super powers, but in
+truth, the locus of capability begins from the cursor and its "shadow" as it
+were: `_[_]`
 
 it goes without saying that the cursor is a ubiquitous feature of interfaces;
 it's everywhere. it's recognizable albeit not "simple" for its ubiquity
