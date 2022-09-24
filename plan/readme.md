@@ -95,13 +95,19 @@ like them:
 6. traceability (??)
 7. adjustability (??)
 8. incrementability (??)
+9. accessibility
+   1. perceivability
+   2. (in)operosity
+   3. comprehensibility/understandability
+	 4. robustness
+10. sustainability (??)
 
 ## footnotes
 
-♦ extension to ReST
-☂ CALM extensions to ReST; or, consistency as logical monotonicity
-☁ timbl, fielding, taylor, medividovic, dashofy
-❤ [amundsen][mamund]
+1. ♦ extension to ReST
+2. ☂ CALM extensions to ReST; or, consistency as logical monotonicity
+3. ☁ timbl, fielding, taylor, medividovic, dashofy
+4. ❤ [amundsen][mamund]
 
 [ovm]: https://mamund.site44.com/articles/objects-v-messages/index.html
 [mamund]: http://amundsen.com/articles/hypermedia-oriented-design/
