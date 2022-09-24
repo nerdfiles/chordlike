@@ -112,8 +112,8 @@ like them:
 ## miscellany
 
 ![Kajsa, P.-Semantics and Model Driven Design Patterns Instantiation. fig 2](https://raw.githubusercontent.com/nerdfiles/chordlike/master/plan/assets/content-images/Kajsa%2C%20P.-Semantics%20and%20Model%20Driven%20Design%20Patterns%20Instantiation-fig-2.png)
-![Kajsa, P.-Semantics and Model Driven Design Patterns Instantiation. tabl 1](https://raw.githubusercontent.com/nerdfiles/chordlike/master/plan/assets/content-images/Kajsa%2C%20P.-Semantics%20and%20Model%20Driven%20Design%20Patterns%20Instantiation-table-1.png)
 ![Kajsa, P.-Semantics and Model Driven Design Patterns Instantiation. fig 1](https://github.com/nerdfiles/chordlike/raw/master/plan/assets/content-images/Kajsa%2C%20P.-Semantics%20and%20Model%20Driven%20Design%20Patterns%20Instantiation-fig-1.png)
+![Kajsa, P.-Semantics and Model Driven Design Patterns Instantiation. tabl 1](https://raw.githubusercontent.com/nerdfiles/chordlike/master/plan/assets/content-images/Kajsa%2C%20P.-Semantics%20and%20Model%20Driven%20Design%20Patterns%20Instantiation-table-1.png)
 
 ## footnotes
 
