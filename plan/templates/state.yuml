@@ -1,4 +1,6 @@
 // {type:state}
 // {generate:true}
 
+(start)->(end)
+
 // EOF
