@@ -41,11 +41,12 @@ const Input = (props) => {
   /**
    * @name onChangeHandler
    * @description change handler.
-   * @todo should probably use the dispatching method or something other than 
+   * @todo should probably use the dispatching method or something other than
    * this! sure it's a handler, but it's too many lines!
    * @param {Event} event - .
    */
   const onChangeHandler = (event) => {
+    event.preventDefault()
     const VALUE = event && event.target && event.target.value
     const PARTS = VALUE.split(UNGLUE)
     const DATA = PARTS[PARTS.length - 1]
@@ -65,7 +66,7 @@ const Input = (props) => {
         return accumulatorRef + currentRef
       })
 
-      // here's where we would publish to a hypermedia API, for a media 
+      // here's where we would publish to a hypermedia API, for a media
       // type that represents a calculator, or the structure of the space
       // of possibility for a calculator. what could this include? typically
       // we may find wittgenstein's line of inquiry or "therapy" practical
@@ -194,11 +195,12 @@ const Input = (props) => {
         }
         break
       default:
-        log('◯ nil')
         break
     }
 
-    event.preventDefault()
+    return () => {
+      log('◯ nil')
+    }
   }
 
   return (
@@ -214,7 +216,7 @@ const Input = (props) => {
         itemScope
         itemType='https://schema.org/WebChord'
         name='chord-input'
-        onChange={onChangeHandler}
+        onChange={(e) => onChangeHandler(e)()}
         placeholder={props && props.name}
         ref={INPUT_ELEMENT}
         required
