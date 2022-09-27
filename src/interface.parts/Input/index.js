@@ -221,7 +221,12 @@ const Input = (props) => {
         title='chord input'
         type='text'
       />
-      <span className='m-view--output__default__'>{INPUT}</span>
+      <span
+        className='m-view--output__default__'
+        role='none'
+      >
+        {INPUT}
+      </span>
     </label>
   )
 }

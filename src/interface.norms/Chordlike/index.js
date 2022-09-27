@@ -8,7 +8,7 @@
  */
 import { useState } from 'react'
 import Setting from '../Setting'
-import Input from '../Input'
+import Input from '../../interface.parts/Input'
 
 /**
  * @name getSetting
@@ -115,7 +115,9 @@ const Chordlike = (props) => {
   ]
 
   return (
-    <div role='main'>
+    <div 
+      role='list'
+    >
       <h1 className='m-view--headline__default__'>chordlike</h1>
       <div className='m-view--dashboard__default__'>
         <Input
