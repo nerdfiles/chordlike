@@ -4,7 +4,11 @@
  */
 import { useState, useRef } from 'react'
 
+// @tools
 const log = console.log
+const begin = console.time
+const end = console.timeEnd
+const table = consol.table
 
 /**
  * @constant
@@ -46,6 +50,7 @@ const Input = (props) => {
    * @param {Event} event - .
    */
   const onChangeHandler = (event) => {
+    begin('input')
     event.preventDefault()
     const VALUE = event && event.target && event.target.value
     const PARTS = VALUE.split(UNGLUE)
@@ -201,6 +206,8 @@ const Input = (props) => {
      */
     const OPERATOR = TOKENS[0]
 
+    table(TOKENLIST)
+
     const isWellFormed = OPERANDS && OPERANDS.length > 1
     let leftOperand
     let rightOperand
@@ -245,6 +252,7 @@ const Input = (props) => {
 
     return () => {
       log('◯ nil')
+      end('input')
     }
   }
 
