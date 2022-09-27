@@ -15,6 +15,6 @@ test(`${FIN} renders menu`, menu)
 test(`${FIN} renders clickable menu`, menuClick)
 test(`${WIP} renders accurate menu`, notMenuClick)
 test(`${FIN} renders input`, input)
-test(`${FIN} renders heading and footer`, footerCheck)
+test(`${FIN} renders footer`, footerCheck)
 
 // EOF
