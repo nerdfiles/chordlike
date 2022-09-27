@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: App.js</title>
+    <title>JSDoc: Source: test/suites/input/index.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: App.js</h1>
+    <h1 class="page-title">Source: test/suites/input/index.js</h1>
 
     
 
@@ -26,26 +26,65 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @filepath ./src/App.js
+            <pre class="prettyprint source linenums"><code>/* global describe, it, expect, test */
+/**
+ * @filepath ./src/test/suites/input/index.js
  */
-import './App.scss'
-import Chordlike from './interface.norms/Chordlike'
-import WPFooter from './interfaces/WPFooter'
+import { render, screen, fireEvent } from '@testing-library/react'
+import pry from 'pryjs'
+import App from '../../../App'
+
+const begin = console.time
+const end = console.timeEnd
+const log = console.log
+const noop = () => ({})
 
 /**
- * App.
+ * input.
  */
-function App () {
-  return (
-    &lt;div className='O-view--app__default__'>
-      &lt;Chordlike />
-      &lt;WPFooter />
-    &lt;/div>
-  )
+export const input = () => {
+  render(&lt;App />)
+  const input = screen.getByTitle('chord input')
+  expect(input).toBeInTheDocument()
 }
 
-export default App
+/**
+ * footerCheck.
+ */
+export const footerCheck = () => {
+  noop('nil')
+  const CONTENT = 'home'
+  const CONTENT_TITLE = 'home'
+
+  begin('footer check')
+
+  // ARRANGE
+  render(&lt;App />)
+
+  try {
+    // ACT
+    fireEvent.click(screen.getByTitle(CONTENT))
+
+    // ASSERT
+    const anyInterface = screen.getByTitle(CONTENT_TITLE)
+    expect(anyInterface).toHaveTextContent(CONTENT)
+
+    // const ROLE = 'none'
+    // log(ROLE)
+    // const getByRole = screen.getByRole(ROLE)
+    // log(getByRole)
+    // fireEvent.click(ITEM)
+    // @todo change input or type
+
+    expect(anyInterface).toBeInTheDocument()
+  } catch (err) {
+    // @todo hash change eschalation conflict??
+    eval(pry.it)
+    log(err)
+  }
+
+  end('footer check')
+}
 
 // EOF
 </code></pre>

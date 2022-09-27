@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plato - .norms/Chordlike/index.js</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/css/vendor/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/css/plato.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="https://github.com/the-simian/es6-plato">ES6 Plato on Github</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+      <li class="active">
+        <a href="display.html">Summary Display</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>.norms/Chordlike/index.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
+      <p class="stat">68.87</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
+      <p class="stat">164</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="col-md-6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="col-md-6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
+      <p class="stat">16.00</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
+      <p class="stat">0.33</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity" data-container="body"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="col-md-12">/**
+ * @filepath ./src/Chordlike/index.js
+ * @description
+ * # chordlike index
+ * ## index
+ *
+ * .
+ */
+import { useState } from &#039;react&#039;
+import Setting from &#039;../Setting&#039;
+import Input from &#039;../../interface.parts/Input&#039;
+
+/**
+ * @name getSetting
+ * @param {} occasion
+ * @param {} name
+ * @param {} callback
+ */
+const getSetting = (occasion, name, callback) =&gt; {
+  return (
+    &lt;Setting
+      active={occasion}
+      name={name}
+      setMode={callback}
+    /&gt;
+  )
+}
+
+/**
+ * @name Chordlike
+ * @description that we&#039;re configuring the input box for mobile, assistive
+ * tools.
+ * @param {} props
+ */
+const Chordlike = (props) =&gt; {
+  /**
+   * @constant
+   * @default
+   */
+  const DEFAULT_MODE = &#039;math&#039; // &#039;([0-9]*)&#039;, &#039;+&#039;, &#039;-&#039;, ...
+
+  /**
+   * @constant
+   * @default
+   */
+  const LOGIC_MODE = &#039;fol&#039; // &#039;!&#039;, &#039;&gt;&#039;, &#039;&amp;&#039;, &#039;v&#039;, &#039;()&#039;, &#039;\∀&#039;, ...
+
+  /**
+   * @constant
+   * @default
+   */
+  const TELEPHONE_MODE = &#039;tel&#039; // &#039;#&#039;, &#039;*&#039;, ([0-9])
+
+  /**
+   * @constant
+   * @default
+   */
+  const WEATHER_MODE = &#039;temp&#039; // &#039;temp&#039;, ...
+
+  /**
+   * @constant
+   * @default
+   */
+  const LOCATION_MODE = &#039;geo&#039; // &#039;nearby&#039;, ...
+
+  /**
+   * @constant
+   * @default
+   */
+  const CLOCK_MODE = &#039;now&#039; // &#039;now&#039;, ...
+
+  /**
+   * @constant
+   * @default
+   */
+  const WH_MODE = &#039;wh-*&#039; // &#039;wh-*&#039;, ...
+
+  /**
+   * @constant
+   * @default
+   */
+  const SEARCH_MODE = &#039;searchbox&#039; // &#039;([A-Za-z])&#039;, suggest logical operations and advanced search recipes as typing goes
+
+  /**
+   * @constant
+   * @default
+   */
+  const [mode, setMode] = useState(DEFAULT_MODE)
+
+  /**
+   * @constant
+   * @default
+   */
+  const MODE_SETTING = mode || DEFAULT_MODE
+
+  /**
+   * @constant
+   * @default
+   */
+  const CLASSNAME = &#039;m-view--list__default__&#039;
+
+  /**
+   * @constant
+   * @default
+   */
+  const INTERFACE_MENU = [
+    getSetting(MODE_SETTING, DEFAULT_MODE, setMode),
+    getSetting(MODE_SETTING, LOGIC_MODE, setMode),
+    getSetting(MODE_SETTING, TELEPHONE_MODE, setMode),
+    getSetting(MODE_SETTING, WEATHER_MODE, setMode),
+    getSetting(MODE_SETTING, LOCATION_MODE, setMode),
+    getSetting(MODE_SETTING, CLOCK_MODE, setMode),
+    getSetting(MODE_SETTING, WH_MODE, setMode),
+    getSetting(MODE_SETTING, SEARCH_MODE, setMode)
+  ]
+
+  return (
+    &lt;div
+      action=&#039;https://ex.app/p{?s,p,o,g}&#039;
+      accept=&#039;game+application/json&#039;
+      id=&#039;&#039;
+      method=&#039;get&#039;
+      role=&#039;form&#039;
+    &gt;
+      &lt;h1 className=&#039;m-view--headline__default__&#039;&gt;chordlike&lt;/h1&gt;
+      &lt;div className=&#039;m-view--dashboard__default__&#039;&gt;
+        &lt;Input
+          name={MODE_SETTING}
+        /&gt;
+      &lt;/div&gt;
+
+      &lt;ul
+        className={CLASSNAME}
+        role=&#039;menu&#039;
+      &gt;
+        {
+          INTERFACE_MENU &amp;&amp; INTERFACE_MENU.length
+            ? INTERFACE_MENU.map((el, index) =&gt; {
+              return (
+                &lt;li
+                  key={index}
+                  className=&#039;m-view--listing__default__&#039;
+                  role={el}
+                &gt;
+                  {el}
+                &lt;/li&gt;
+              )
+            }) : (
+              &lt;li
+                className=&#039;m-view--listing__empty__&#039;
+              &gt;
+                no &lt;link rel=&#039;null&#039;&gt;interface&lt;/link&gt; items available
+              &lt;/li&gt;
+            )
+        }
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default Chordlike
+
+// EOF
+</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ complexity.cyclomatic }} <br>
+    Length : {{ complexity.halstead.length }} <br>
+    Difficulty : {{ complexity.halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ complexity.halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>
