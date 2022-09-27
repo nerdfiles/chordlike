@@ -3,6 +3,7 @@
  * @filepath ./src/test/suites/input/index.js
  */
 import { render, screen, fireEvent } from '@testing-library/react'
+import pry from 'pryjs'
 import App from '../../../App'
 
 const begin = console.time
@@ -49,6 +50,8 @@ export const footerCheck = () => {
 
     expect(anyInterface).toBeInTheDocument()
   } catch (err) {
+    // @todo hash change eschalation conflict??
+    eval(pry.it)
     log(err)
   }
 
