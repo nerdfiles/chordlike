@@ -44,6 +44,7 @@ export const input = () => {
  */
 export const footerCheck = () => {
   noop('nil')
+
   // ASSIST
   const CONTENT = 'home'
   const CONTENT_TITLE = 'home'
