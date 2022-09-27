@@ -110,7 +110,7 @@ const Input = (props) => {
       // specificity. some might think that "epistemology as epistemic justification"
       // is just a round about way of getting back at zero-knowledge proofs.
       // what we are seeking here is a way for joint epistemic sponteneity
-      // to inform a relevance logic based on deep semantic hashing. from the 
+      // to inform a relevance logic based on deep semantic hashing. from the
       // client's perspective, it sends a language and the participating server
       // may come up with its own sense for what "+" means but it is not based
       // on any "mental" history (nor cookies nor anything else) of the client,
