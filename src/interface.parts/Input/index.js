@@ -209,6 +209,7 @@ const Input = (props) => {
       htmlFor='chord-input'
     >
       <span className='m-view--labeltext__default__'>yo</span>
+
       <input
         aria-required
         className={CLASSNAME}
@@ -223,6 +224,7 @@ const Input = (props) => {
         title='chord input'
         type='text'
       />
+
       <span
         className='m-view--output__default__'
         role='none'
