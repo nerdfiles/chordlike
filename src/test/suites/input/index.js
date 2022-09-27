@@ -3,6 +3,7 @@
  * @filepath ./src/test/suites/input/index.js
  */
 import { render, screen, fireEvent } from '@testing-library/react'
+import { assert } from 'chai'
 import pry from 'pryjs'
 import App from '../../../App'
 
@@ -10,7 +11,6 @@ import App from '../../../App'
 const begin = console.time
 const end = console.timeEnd
 const log = console.log
-const assert = console.assert
 const table = (data) => console.table(data)
 const err = console.err
 const noop = () => ({})
@@ -59,18 +59,14 @@ export const footerCheck = () => {
   try {
     for (let i = 0; i < output.classList.length; ++i) {
       const TOKEN = output.classList[i]
-      // no expect() available here without the router. thanks zuck 🐰
-      assert(TOKEN.includes('m') === true)
-      // testing if it's member to the window's block
-      assert(TOKEN.includes('view') === true)
-      // testing for whatever this is. an output display, i reckon.
-      assert(TOKEN.includes('output') === true)
-      // testing for defaults
-      assert(TOKEN.includes('default') === true)
+      assert(TOKEN.includes('m') === true, 'no expect() available here without the router. thanks zuck 🐰')
+      assert(TOKEN.includes('view') === true, 'testing if it\'s member to the window\'s block')
+      assert(TOKEN.includes('output') === true, 'testing for whatever this is. an output display, i reckon.')
+      assert(TOKEN.includes('default') === true, 'testing for defaults')
       // testing false for organ. it's certainly not that, what like a
       // class. see siren/schema.org before casting organs of a
       // https://bioschemas.org/types/Taxon/.
-      assert(TOKEN.includes('O') === false)
+      assert(TOKEN.includes('O') === false, 'testing false for organ.')
     }
 
     table(Object.keys(output))

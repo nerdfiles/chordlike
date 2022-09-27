@@ -68,6 +68,7 @@
     ]
   },
   "devDependencies": {
+    "chai": "^4.3.6",
     "css-coverage": "^2.1.0",
     "es6-plato": "^1.2.3",
     "jest-html-reporter": "^3.7.0",
