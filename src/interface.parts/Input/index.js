@@ -202,45 +202,45 @@ const Input = (props) => {
     const OPERATOR = TOKENS[0]
 
     const isWellFormed = OPERANDS && OPERANDS.length > 1
+    let leftOperand
+    let rightOperand
+    let OUTPUT
 
-    switch (OPERATOR) {
-      case PLUS_OP:
-        if (isWellFormed) {
-          const leftOperand = Number(OPERANDS[0])
-          const rightOperand = Number(OPERANDS[1])
-          const OUTPUT = leftOperand + rightOperand
+    if (isWellFormed) {
+      switch (OPERATOR) {
+        case PLUS_OP:
+          leftOperand = Number(OPERANDS[0])
+          rightOperand = Number(OPERANDS[1])
+          OUTPUT = leftOperand + rightOperand
           SETINPUT(OUTPUT)
-        }
 
-        break
-      case MINUS_OP:
-        if (isWellFormed) {
-          const leftOperand = Number(OPERANDS[0])
-          const rightOperand = Number(OPERANDS[1])
-          const OUTPUT = leftOperand - rightOperand
+          break
+        case MINUS_OP:
+          leftOperand = Number(OPERANDS[0])
+          rightOperand = Number(OPERANDS[1])
+          OUTPUT = leftOperand - rightOperand
           SETINPUT(OUTPUT)
-        }
 
-        break
-      case DIVIDE_OP:
-        if (isWellFormed) {
-          const leftOperand = Number(OPERANDS[0])
-          const rightOperand = Number(OPERANDS[1])
-          const OUTPUT = leftOperand / rightOperand
+          break
+        case DIVIDE_OP:
+          leftOperand = Number(OPERANDS[0])
+          rightOperand = Number(OPERANDS[1])
+          OUTPUT = leftOperand / rightOperand
           SETINPUT(OUTPUT)
-        }
 
-        break
-      case MULTIPLY_OP:
-        if (isWellFormed) {
-          const leftOperand = Number(OPERANDS[0])
-          const rightOperand = Number(OPERANDS[1])
-          const OUTPUT = leftOperand * rightOperand
+          break
+        case MULTIPLY_OP:
+          leftOperand = Number(OPERANDS[0])
+          rightOperand = Number(OPERANDS[1])
+          OUTPUT = leftOperand * rightOperand
           SETINPUT(OUTPUT)
-        }
-        break
-      default:
-        break
+
+          break
+        default:
+          break
+      }
+    } else {
+      log('◯ nil')
     }
 
     return () => {
