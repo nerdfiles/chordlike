@@ -4,6 +4,7 @@
  */
 import { render, screen, fireEvent } from '@testing-library/react'
 import { assert } from 'chai'
+import { setupWorker, rest } from 'msw'
 import pry from 'pryjs'
 import App from '../../../App'
 
@@ -12,8 +13,21 @@ const begin = console.time
 const end = console.timeEnd
 const log = console.log
 const table = (data) => console.table(data)
-const err = console.err
+// const err = console.err
 const noop = () => ({})
+
+// use the mock server setup instead of here
+// const w = setupWorker(
+//   rest.get('https://reqres.in/api/users', (req, res, context) => {
+//     return res(
+//       context.delay(1500),
+//       context.status(202, 'httpstatuses.com/202'),
+//       context.json({
+//         mime: 'application/json+siren'
+//       })
+//     )
+//   })
+// )
 
 /**
  * @name input
@@ -55,6 +69,8 @@ export const footerCheck = () => {
   // @todo implement router for sdet to test hash change
   // expect(output.classList).toBe('.m-view--output__default__')
   expect(output).toBeInTheDocument()
+
+  // w.start()
 
   try {
     for (let i = 0; i < output.classList.length; ++i) {
