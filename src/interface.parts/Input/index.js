@@ -140,13 +140,47 @@ const Input = (props) => {
       STORE.push(MEDIATYPE)
     }
 
+    /**
+     * @constant
+     * @default
+     */
     const PLUS_OP = '+'
+
+    /**
+     * @constant
+     * @default
+     */
     const MINUS_OP = '-'
+
+    /**
+     * @constant
+     * @default
+     */
     const DIVIDE_OP = '%'
+
+    /**
+     * @constant
+     * @default
+     */
     const MULTIPLY_OP = '*'
+
+    /**
+     * @constant
+     * @default
+     */
     const EXPRESSION = STORE && STORE.length && STORE[0][1]
-    const OP_TEMP = EXPRESSION && EXPRESSION.split('')
-    const OP_CHAR = OP_TEMP && OP_TEMP.length && OP_TEMP.filter((i, k) => {
+
+    /**
+     * @constant
+     * @default
+     */
+    const TOKENLIST = EXPRESSION && EXPRESSION.split('')
+
+    /**
+     * @constant
+     * @default
+     */
+    const TOKENS = TOKENLIST && TOKENLIST.length && TOKENLIST.filter((i, k) => {
       return (
         i === PLUS_OP ||
         i === MINUS_OP ||
@@ -154,11 +188,22 @@ const Input = (props) => {
         i === MULTIPLY_OP
       )
     })
-    const OPERANDS = EXPRESSION && EXPRESSION.split(OP_CHAR)
-    const isWellFormed = OPERANDS && OPERANDS.length > 1
-    const _OP = OP_CHAR[0]
 
-    switch (_OP) {
+    /**
+     * @constant
+     * @default
+     */
+    const OPERANDS = EXPRESSION && EXPRESSION.split(TOKENS)
+
+    /**
+     * @constant
+     * @default
+     */
+    const OPERATOR = TOKENS[0]
+
+    const isWellFormed = OPERANDS && OPERANDS.length > 1
+
+    switch (OPERATOR) {
       case PLUS_OP:
         if (isWellFormed) {
           const leftOperand = Number(OPERANDS[0])
