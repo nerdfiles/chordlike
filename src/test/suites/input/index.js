@@ -53,7 +53,7 @@ export const footerCheck = () => {
   expect(anyInterface).toBeInTheDocument()
 
   // @todo implement router for sdet to test hash change
-  // expect(output.classList).toBe('.m-view--output__default__') 
+  // expect(output.classList).toBe('.m-view--output__default__')
   expect(output).toBeInTheDocument()
 
   try {
@@ -67,8 +67,11 @@ export const footerCheck = () => {
       // class. see siren/schema.org before casting organs of a
       // https://bioschemas.org/types/Taxon/.
       assert(TOKEN.includes('O') === false, 'testing false for organ.')
+      // @todo not sure this is the most helpful error if contradicted
+      // so i'm unsure of the merit of these asserts except but as formalization.
     }
 
+    // "*what* is present is not what is *presented*." (alain badiou)
     table(Object.keys(output))
   } catch (err) {
     // @todo hash change eschalation conflict??
