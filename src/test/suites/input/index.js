@@ -10,30 +10,49 @@ const end = console.timeEnd
 const log = console.log
 const noop = () => ({})
 
+/**
+ * input.
+ */
 export const input = () => {
   render(<App />)
   const input = screen.getByTitle('chord input')
   expect(input).toBeInTheDocument()
 }
 
-export const roleCheck = () => {
+/**
+ * footerCheck.
+ */
+export const footerCheck = () => {
   noop('nil')
-  begin('role')
+  const CONTENT = 'home'
+  const CONTENT_TITLE = 'home'
+
+  begin('footer check')
+
+  // ARRANGE
   render(<App />)
 
   try {
-    const ITEM = screen.getByTitle('chord input')
-    fireEvent.click(ITEM)
-    const input = screen.getByTitle('chord input')
-    const ROLE = 'none'
-    log(ROLE)
-    const getByRole = screen.getByRole(ROLE)
-    expect(input).toBeInTheDocument()
+    // ACT
+    fireEvent.click(screen.getByTitle(CONTENT))
+
+    // ASSERT
+    const anyInterface = screen.getByTitle(CONTENT_TITLE)
+    expect(anyInterface).toHaveTextContent(CONTENT)
+
+    // const ROLE = 'none'
+    // log(ROLE)
+    // const getByRole = screen.getByRole(ROLE)
+    // log(getByRole)
+    // fireEvent.click(ITEM)
+    // @todo change input or type
+
+    expect(anyInterface).toBeInTheDocument()
   } catch (err) {
     log(err)
   }
 
-  end('role')
+  end('footer check')
 }
 
 // EOF

@@ -115,8 +115,12 @@ const Chordlike = (props) => {
   ]
 
   return (
-    <div 
-      role='list'
+    <div
+      action='https://ex.app/p{?s,p,o,g}'
+      accept='game+application/json'
+      id=''
+      method='get'
+      role='form'
     >
       <h1 className='m-view--headline__default__'>chordlike</h1>
       <div className='m-view--dashboard__default__'>
@@ -136,7 +140,7 @@ const Chordlike = (props) => {
                 <li
                   key={index}
                   className='m-view--listing__default__'
-                  role='none'
+                  role={el}
                 >
                   {el}
                 </li>
@@ -145,7 +149,7 @@ const Chordlike = (props) => {
               <li
                 className='m-view--listing__empty__'
               >
-                no interface items available
+                no <link rel='null'>interface</link> items available
               </li>
             )
         }

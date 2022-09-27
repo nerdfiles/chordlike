@@ -5,7 +5,7 @@
 import link from './test/suites/link'
 import menu from './test/suites/menu'
 import { menuClick, notMenuClick } from './test/suites/menu-click'
-import { input, roleCheck } from './test/suites/input'
+import { input, footerCheck } from './test/suites/input'
 
 const FIN = '🍩'
 const WIP = '🔧'
@@ -15,6 +15,6 @@ test(`${FIN} renders menu`, menu)
 test(`${FIN} renders clickable menu`, menuClick)
 test(`${WIP} renders accurate menu`, notMenuClick)
 test(`${FIN} renders input`, input)
-test(`${FIN} renders role=main`, roleCheck)
+test(`${FIN} renders heading and footer`, footerCheck)
 
 // EOF
