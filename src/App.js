@@ -2,8 +2,8 @@
  * @filepath ./src/App.js
  */
 import './App.scss'
-import Chordlike from './Chordlike'
-import WPFooter from './WPFooter'
+import Chordlike from './interface.norms/Chordlike'
+import WPFooter from './interfaces/WPFooter'
 
 /**
  * App.

@@ -1,5 +1,10 @@
 /**
  * @filepath ./src/Chordlike/index.js
+ * @description
+ * # chordlike index
+ * ## index
+ *
+ * .
  */
 import { useState } from 'react'
 import Setting from '../Setting'

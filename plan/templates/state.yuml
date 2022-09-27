@@ -14,6 +14,8 @@
 // in yuml syntax.
 // @todo browse _
 
-(start)->(end)
+(start)[aRb]->(A)
+(A)[aRb]->(B)
+(B)[aRb]->(end)
 
 // EOF
