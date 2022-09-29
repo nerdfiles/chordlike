@@ -116,15 +116,25 @@ const Chordlike = (props) => {
 
   return (
     <div
-      action='https://ex.app/p{?s,p,o,g}'
       rel='rel'
       href='https://ex.app/p?s=0&p=0&o=0&g=0'
-      accept='game+application/json'
-      id=''
-      method='get'
       role='form'
     >
+      <form
+        accept='game+application/json'
+        action='https://ex.app/p{?s,p,o,g}'
+        className='accessibly-hide'
+        id=''
+        method='get'
+        role=''
+      >
+        <fieldset>
+          <label htmlFor='' />
+        </fieldset>
+      </form>
+
       <h1 className='m-view--headline__default__'>chordlike</h1>
+
       <div className='m-view--dashboard__default__'>
         <Input
           name={MODE_SETTING}
