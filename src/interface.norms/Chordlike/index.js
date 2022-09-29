@@ -117,6 +117,7 @@ const Chordlike = (props) => {
   return (
     <div
       action='https://ex.app/p{?s,p,o,g}'
+      rel='https://ex.app/p?s=0&p=0&o=0&g=0'
       accept='game+application/json'
       id=''
       method='get'
