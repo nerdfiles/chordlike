@@ -261,7 +261,7 @@ const Input = (props) => {
       className='m-view--label__default__'
       htmlFor='chord-input'
     >
-      <span className='m-view--labeltext__default__'>yo</span>
+      <span className='m-view--labeltext__default__'>yo,</span>
 
       <input
         aria-required
