@@ -8,7 +8,7 @@ import { useState, useRef } from 'react'
 const log = console.log
 const begin = console.time
 const end = console.timeEnd
-const table = consol.table
+const table = console.table
 
 /**
  * @constant
