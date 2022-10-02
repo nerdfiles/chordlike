@@ -4,4 +4,31 @@ li {
   line-height: 0.725rem;
 }
 
-@import url('http://fonts.cdnfonts.com/css/eulexia');
+// @import url('http://fonts.cdnfonts.com/css/eulexia');
+
+@font-face {
+    font-family: 'Eulexia';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Eulexia'), url('https://sleepy-operation.surge.sh/EulexiaRegular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Eulexia';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Eulexia'), url('https://sleepy-operation.surge.sh/EulexiaBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Eulexia';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Eulexia'), url('https://sleepy-operation.surge.sh/EulexiaBoldItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Eulexia';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Eulexia'), url('https://sleepy-operation.surge.sh/EulexiaItalic.woff') format('woff');
+}
+
+// EOF

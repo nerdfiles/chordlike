@@ -1,10 +1,17 @@
 /* global describe, it, expect, test */
 /**
  * @filepath ./src/test/suites/input/index.js
+ * @Deescription
+ * testing false for organ. it's certainly not that, what like a
+ * class. see siren/schema.org before casting organs of a
+ * https://bioschemas.org/types/Taxon/.
+ * @todo not sure this is the most helpful error if contradicted
+ * so i'm unsure of the merit of these asserts except but as
+ * formalization.
  */
 import { render, screen, fireEvent } from '@testing-library/react'
 import { assert } from 'chai'
-import { setupWorker, rest } from 'msw'
+// import { setupWorker, rest } from 'msw'
 import pry from 'pryjs'
 import App from '../../../App'
 
@@ -80,12 +87,7 @@ export const footerCheck = () => {
       assert(TOKEN.includes('view') === true, 'testing if it\'s member to the window\'s block')
       assert(TOKEN.includes('output') === true, 'testing for whatever this is. an output display, i reckon.')
       assert(TOKEN.includes('default') === true, 'testing for defaults')
-      // testing false for organ. it's certainly not that, what like a
-      // class. see siren/schema.org before casting organs of a
-      // https://bioschemas.org/types/Taxon/.
       assert(TOKEN.includes('O') === false, 'testing false for organ.')
-      // @todo not sure this is the most helpful error if contradicted
-      // so i'm unsure of the merit of these asserts except but as formalization.
     }
 
     // "*what* is present is not what is *presented*." (alain badiou)

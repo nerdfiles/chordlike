@@ -118,18 +118,19 @@ const Chordlike = (props) => {
     <div
       rel='rel'
       href='https://ex.app/p?s=0&p=0&o=0&g=0'
-      role='form'
+      role='main'
     >
       <form
         accept='game+application/json'
         action='https://ex.app/p{?s,p,o,g}'
         className='accessibly-hide'
-        id=''
+        name='name'
+        id='chord'
         method='get'
-        role=''
+        role='region'
       >
         <fieldset>
-          <label htmlFor='' />
+          <label htmlFor='chord' />
         </fieldset>
       </form>
 

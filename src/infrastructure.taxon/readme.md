@@ -2,11 +2,11 @@
 
 ## reference implementation
 
-taxon:wq
+1. taxon:wq
 
 ## metacoding
 
-sassdoc
-sass-true
+1. sassdoc
+2. sass-true
 
 <!-- EOF -->
