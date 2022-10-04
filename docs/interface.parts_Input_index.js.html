@@ -32,7 +32,11 @@
  */
 import { useState, useRef } from 'react'
 
+// @tools
 const log = console.log
+const begin = console.time
+const end = console.timeEnd
+const table = console.table
 
 /**
  * @constant
@@ -69,11 +73,13 @@ const Input = (props) => {
   /**
    * @name onChangeHandler
    * @description change handler.
-   * @todo should probably use the dispatching method or something other than 
+   * @todo should probably use the dispatching method or something other than
    * this! sure it's a handler, but it's too many lines!
    * @param {Event} event - .
    */
   const onChangeHandler = (event) => {
+    begin('input')
+    event.preventDefault()
     const VALUE = event &amp;&amp; event.target &amp;&amp; event.target.value
     const PARTS = VALUE.split(UNGLUE)
     const DATA = PARTS[PARTS.length - 1]
@@ -93,7 +99,7 @@ const Input = (props) => {
         return accumulatorRef + currentRef
       })
 
-      // here's where we would publish to a hypermedia API, for a media 
+      // here's where we would publish to a hypermedia API, for a media
       // type that represents a calculator, or the structure of the space
       // of possibility for a calculator. what could this include? typically
       // we may find wittgenstein's line of inquiry or "therapy" practical
@@ -137,7 +143,7 @@ const Input = (props) => {
       // specificity. some might think that "epistemology as epistemic justification"
       // is just a round about way of getting back at zero-knowledge proofs.
       // what we are seeking here is a way for joint epistemic sponteneity
-      // to inform a relevance logic based on deep semantic hashing. from the 
+      // to inform a relevance logic based on deep semantic hashing. from the
       // client's perspective, it sends a language and the participating server
       // may come up with its own sense for what "+" means but it is not based
       // on any "mental" history (nor cookies nor anything else) of the client,
@@ -167,13 +173,47 @@ const Input = (props) => {
       STORE.push(MEDIATYPE)
     }
 
+    /**
+     * @constant
+     * @default
+     */
     const PLUS_OP = '+'
+
+    /**
+     * @constant
+     * @default
+     */
     const MINUS_OP = '-'
+
+    /**
+     * @constant
+     * @default
+     */
     const DIVIDE_OP = '%'
+
+    /**
+     * @constant
+     * @default
+     */
     const MULTIPLY_OP = '*'
+
+    /**
+     * @constant
+     * @default
+     */
     const EXPRESSION = STORE &amp;&amp; STORE.length &amp;&amp; STORE[0][1]
-    const OP_TEMP = EXPRESSION &amp;&amp; EXPRESSION.split('')
-    const OP_CHAR = OP_TEMP &amp;&amp; OP_TEMP.length &amp;&amp; OP_TEMP.filter((i, k) => {
+
+    /**
+     * @constant
+     * @default
+     */
+    const TOKENLIST = EXPRESSION &amp;&amp; EXPRESSION.split('')
+
+    /**
+     * @constant
+     * @default
+     */
+    const TOKENS = TOKENLIST &amp;&amp; TOKENLIST.length &amp;&amp; TOKENLIST.filter((i, k) => {
       return (
         i === PLUS_OP ||
         i === MINUS_OP ||
@@ -181,52 +221,67 @@ const Input = (props) => {
         i === MULTIPLY_OP
       )
     })
-    const OPERANDS = EXPRESSION &amp;&amp; EXPRESSION.split(OP_CHAR)
+
+    /**
+     * @constant
+     * @default
+     */
+    const OPERANDS = EXPRESSION &amp;&amp; EXPRESSION.split(TOKENS)
+
+    /**
+     * @constant
+     * @default
+     */
+    const OPERATOR = TOKENS[0]
+
+    table(TOKENLIST)
+
     const isWellFormed = OPERANDS &amp;&amp; OPERANDS.length > 1
-    const _OP = OP_CHAR[0]
+    let leftOperand
+    let rightOperand
+    let OUTPUT
 
-    switch (_OP) {
-      case PLUS_OP:
-        if (isWellFormed) {
-          const leftOperand = Number(OPERANDS[0])
-          const rightOperand = Number(OPERANDS[1])
-          const OUTPUT = leftOperand + rightOperand
+    if (isWellFormed) {
+      switch (OPERATOR) {
+        case PLUS_OP:
+          leftOperand = Number(OPERANDS[0])
+          rightOperand = Number(OPERANDS[1])
+          OUTPUT = leftOperand + rightOperand
           SETINPUT(OUTPUT)
-        }
 
-        break
-      case MINUS_OP:
-        if (isWellFormed) {
-          const leftOperand = Number(OPERANDS[0])
-          const rightOperand = Number(OPERANDS[1])
-          const OUTPUT = leftOperand - rightOperand
+          break
+        case MINUS_OP:
+          leftOperand = Number(OPERANDS[0])
+          rightOperand = Number(OPERANDS[1])
+          OUTPUT = leftOperand - rightOperand
           SETINPUT(OUTPUT)
-        }
 
-        break
-      case DIVIDE_OP:
-        if (isWellFormed) {
-          const leftOperand = Number(OPERANDS[0])
-          const rightOperand = Number(OPERANDS[1])
-          const OUTPUT = leftOperand / rightOperand
+          break
+        case DIVIDE_OP:
+          leftOperand = Number(OPERANDS[0])
+          rightOperand = Number(OPERANDS[1])
+          OUTPUT = leftOperand / rightOperand
           SETINPUT(OUTPUT)
-        }
 
-        break
-      case MULTIPLY_OP:
-        if (isWellFormed) {
-          const leftOperand = Number(OPERANDS[0])
-          const rightOperand = Number(OPERANDS[1])
-          const OUTPUT = leftOperand * rightOperand
+          break
+        case MULTIPLY_OP:
+          leftOperand = Number(OPERANDS[0])
+          rightOperand = Number(OPERANDS[1])
+          OUTPUT = leftOperand * rightOperand
           SETINPUT(OUTPUT)
-        }
-        break
-      default:
-        log('◯ nil')
-        break
+
+          break
+        default:
+          break
+      }
+    } else {
+      log('◯ nil')
     }
 
-    event.preventDefault()
+    return () => {
+      log('◯ nil')
+      end('input')
+    }
   }
 
   return (
@@ -234,7 +289,8 @@ const Input = (props) => {
       className='m-view--label__default__'
       htmlFor='chord-input'
     >
-      &lt;span className='m-view--labeltext__default__'>yo&lt;/span>
+      &lt;span className='m-view--labeltext__default__'>yo,&lt;/span>
+
       &lt;input
         aria-required
         className={CLASSNAME}
@@ -242,13 +298,14 @@ const Input = (props) => {
         itemScope
         itemType='https://schema.org/WebChord'
         name='chord-input'
-        onChange={onChangeHandler}
+        onChange={(e) => onChangeHandler(e)()}
         placeholder={props &amp;&amp; props.name}
         ref={INPUT_ELEMENT}
         required
         title='chord input'
         type='text'
       />
+
       &lt;span
         className='m-view--output__default__'
         role='none'
@@ -278,7 +335,7 @@ export default Input
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Mon Sep 26 2022 21:24:01 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Tue Oct 04 2022 15:59:01 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

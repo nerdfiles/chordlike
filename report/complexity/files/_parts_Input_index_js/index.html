@@ -47,11 +47,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">54.17</p>
+      <p class="stat">57.80</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">237</p>
+      <p class="stat">294</p>
     </div>
   </div>
   <div class="row historical">
@@ -65,11 +65,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">36.02</p>
+      <p class="stat">38.71</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">0.94</p>
+      <p class="stat">1.02</p>
     </div>
   </div>
 </div>
@@ -98,7 +98,11 @@
  */
 import { useState, useRef } from &#039;react&#039;
 
+// @tools
 const log = console.log
+const begin = console.time
+const end = console.timeEnd
+const table = console.table
 
 /**
  * @constant
@@ -135,11 +139,13 @@ const Input = (props) =&gt; {
   /**
    * @name onChangeHandler
    * @description change handler.
-   * @todo should probably use the dispatching method or something other than 
+   * @todo should probably use the dispatching method or something other than
    * this! sure it&#039;s a handler, but it&#039;s too many lines!
    * @param {Event} event - .
    */
   const onChangeHandler = (event) =&gt; {
+    begin(&#039;input&#039;)
+    event.preventDefault()
     const VALUE = event &amp;&amp; event.target &amp;&amp; event.target.value
     const PARTS = VALUE.split(UNGLUE)
     const DATA = PARTS[PARTS.length - 1]
@@ -159,7 +165,7 @@ const Input = (props) =&gt; {
         return accumulatorRef + currentRef
       })
 
-      // here&#039;s where we would publish to a hypermedia API, for a media 
+      // here&#039;s where we would publish to a hypermedia API, for a media
       // type that represents a calculator, or the structure of the space
       // of possibility for a calculator. what could this include? typically
       // we may find wittgenstein&#039;s line of inquiry or &quot;therapy&quot; practical
@@ -203,7 +209,7 @@ const Input = (props) =&gt; {
       // specificity. some might think that &quot;epistemology as epistemic justification&quot;
       // is just a round about way of getting back at zero-knowledge proofs.
       // what we are seeking here is a way for joint epistemic sponteneity
-      // to inform a relevance logic based on deep semantic hashing. from the 
+      // to inform a relevance logic based on deep semantic hashing. from the
       // client&#039;s perspective, it sends a language and the participating server
       // may come up with its own sense for what &quot;+&quot; means but it is not based
       // on any &quot;mental&quot; history (nor cookies nor anything else) of the client,
@@ -233,13 +239,47 @@ const Input = (props) =&gt; {
       STORE.push(MEDIATYPE)
     }
 
+    /**
+     * @constant
+     * @default
+     */
     const PLUS_OP = &#039;+&#039;
+
+    /**
+     * @constant
+     * @default
+     */
     const MINUS_OP = &#039;-&#039;
+
+    /**
+     * @constant
+     * @default
+     */
     const DIVIDE_OP = &#039;%&#039;
+
+    /**
+     * @constant
+     * @default
+     */
     const MULTIPLY_OP = &#039;*&#039;
+
+    /**
+     * @constant
+     * @default
+     */
     const EXPRESSION = STORE &amp;&amp; STORE.length &amp;&amp; STORE[0][1]
-    const OP_TEMP = EXPRESSION &amp;&amp; EXPRESSION.split(&#039;&#039;)
-    const OP_CHAR = OP_TEMP &amp;&amp; OP_TEMP.length &amp;&amp; OP_TEMP.filter((i, k) =&gt; {
+
+    /**
+     * @constant
+     * @default
+     */
+    const TOKENLIST = EXPRESSION &amp;&amp; EXPRESSION.split(&#039;&#039;)
+
+    /**
+     * @constant
+     * @default
+     */
+    const TOKENS = TOKENLIST &amp;&amp; TOKENLIST.length &amp;&amp; TOKENLIST.filter((i, k) =&gt; {
       return (
         i === PLUS_OP ||
         i === MINUS_OP ||
@@ -247,52 +287,67 @@ const Input = (props) =&gt; {
         i === MULTIPLY_OP
       )
     })
-    const OPERANDS = EXPRESSION &amp;&amp; EXPRESSION.split(OP_CHAR)
+
+    /**
+     * @constant
+     * @default
+     */
+    const OPERANDS = EXPRESSION &amp;&amp; EXPRESSION.split(TOKENS)
+
+    /**
+     * @constant
+     * @default
+     */
+    const OPERATOR = TOKENS[0]
+
+    table(TOKENLIST)
+
     const isWellFormed = OPERANDS &amp;&amp; OPERANDS.length &gt; 1
-    const _OP = OP_CHAR[0]
+    let leftOperand
+    let rightOperand
+    let OUTPUT
 
-    switch (_OP) {
-      case PLUS_OP:
-        if (isWellFormed) {
-          const leftOperand = Number(OPERANDS[0])
-          const rightOperand = Number(OPERANDS[1])
-          const OUTPUT = leftOperand + rightOperand
+    if (isWellFormed) {
+      switch (OPERATOR) {
+        case PLUS_OP:
+          leftOperand = Number(OPERANDS[0])
+          rightOperand = Number(OPERANDS[1])
+          OUTPUT = leftOperand + rightOperand
           SETINPUT(OUTPUT)
-        }
 
-        break
-      case MINUS_OP:
-        if (isWellFormed) {
-          const leftOperand = Number(OPERANDS[0])
-          const rightOperand = Number(OPERANDS[1])
-          const OUTPUT = leftOperand - rightOperand
+          break
+        case MINUS_OP:
+          leftOperand = Number(OPERANDS[0])
+          rightOperand = Number(OPERANDS[1])
+          OUTPUT = leftOperand - rightOperand
           SETINPUT(OUTPUT)
-        }
 
-        break
-      case DIVIDE_OP:
-        if (isWellFormed) {
-          const leftOperand = Number(OPERANDS[0])
-          const rightOperand = Number(OPERANDS[1])
-          const OUTPUT = leftOperand / rightOperand
+          break
+        case DIVIDE_OP:
+          leftOperand = Number(OPERANDS[0])
+          rightOperand = Number(OPERANDS[1])
+          OUTPUT = leftOperand / rightOperand
           SETINPUT(OUTPUT)
-        }
 
-        break
-      case MULTIPLY_OP:
-        if (isWellFormed) {
-          const leftOperand = Number(OPERANDS[0])
-          const rightOperand = Number(OPERANDS[1])
-          const OUTPUT = leftOperand * rightOperand
+          break
+        case MULTIPLY_OP:
+          leftOperand = Number(OPERANDS[0])
+          rightOperand = Number(OPERANDS[1])
+          OUTPUT = leftOperand * rightOperand
           SETINPUT(OUTPUT)
-        }
-        break
-      default:
-        log(&#039;◯ nil&#039;)
-        break
+
+          break
+        default:
+          break
+      }
+    } else {
+      log(&#039;◯ nil&#039;)
     }
 
-    event.preventDefault()
+    return () =&gt; {
+      log(&#039;◯ nil&#039;)
+      end(&#039;input&#039;)
+    }
   }
 
   return (
@@ -300,7 +355,8 @@ const Input = (props) =&gt; {
       className=&#039;m-view--label__default__&#039;
       htmlFor=&#039;chord-input&#039;
     &gt;
-      &lt;span className=&#039;m-view--labeltext__default__&#039;&gt;yo&lt;/span&gt;
+      &lt;span className=&#039;m-view--labeltext__default__&#039;&gt;yo,&lt;/span&gt;
+
       &lt;input
         aria-required
         className={CLASSNAME}
@@ -308,13 +364,14 @@ const Input = (props) =&gt; {
         itemScope
         itemType=&#039;https://schema.org/WebChord&#039;
         name=&#039;chord-input&#039;
-        onChange={onChangeHandler}
+        onChange={(e) =&gt; onChangeHandler(e)()}
         placeholder={props &amp;&amp; props.name}
         ref={INPUT_ELEMENT}
         required
         title=&#039;chord input&#039;
         type=&#039;text&#039;
       /&gt;
+
       &lt;span
         className=&#039;m-view--output__default__&#039;
         role=&#039;none&#039;
