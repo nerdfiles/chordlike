@@ -4,11 +4,26 @@
  * # chordlike index
  * ## index
  *
- * .
+ * minimum design contribution schema[0]:
+ *
+ * `[∼]StereotypeName::Meta-attributeName::value;`
+ *
+ * https://www.semanticscholar.org/paper/Semantics-and-Model-Driven-Design-Patterns-Kajsa/eda1de3aefd4b67a2155ec44cb7aa823c181d300
  */
 import { useState } from 'react'
 import Setting from '../Setting'
 import Input from '../../interface.parts/Input'
+
+const F = (props) => {
+  return (
+    <div
+      id='abcd1234'
+      className={props.context}
+    >
+      <stacked-form--footer__default__ />
+    </div>
+  )
+}
 
 /**
  * @name getSetting
@@ -133,6 +148,8 @@ const Chordlike = (props) => {
           <label htmlFor='chord' />
         </fieldset>
       </form>
+
+      <F content='[sm-] [md-] [lg-]' />
 
       <h1 className='m-view--headline__default__'>chordlike</h1>
 
