@@ -1,6 +1,6 @@
 // {type:state}
 // {generate:true}
 
-(start)->(end)
+(start)->(a)->(R)->(b)->(end)
 
 // EOF
