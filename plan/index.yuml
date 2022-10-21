@@ -1,6 +1,17 @@
 // {type:state}
 // {generate:true}
+// {usage:
+// const a = {}
+// const R = {}
+// const b = {}
+// }
 
-(start)->(a)->(R)->(b)->(end)
+(start)->(a)
+(a)->(R)
+(in::R)->(b)
+(Type)->(a)
+(a)->(in::R)
+(R)->(b)->(end)
+(f: Type)->(Type)
 
 // EOF
