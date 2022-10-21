@@ -32,6 +32,41 @@ table, label, input, button {
   letter-spacing: 0.025rem;
 }
 
+/**
+ * @name Monad
+ * @description .
+ */
+@mixin Monad ($args...) {
+  @each $o in meta.keyword($args) {
+    @extend .#{$o};
+  }
+}
+
+@include Monad(
+  $F: "next",
+  $G: "last"
+);
+
+/**
+ * @name World
+ * @description .
+ */
+@mixin World () {
+  // @debug
+}
+
+@include World(
+  $map: "",
+  $chain: "",
+  $toString: "",
+  $query: "",
+  $filter: "",
+  $__doc__: ""
+)
+
+// .F {}
+// .G {}
+
 /// @name ./src/App.scss:mixins:enableActivity
 /// @group interface.config
 @mixin enableActivity () {
