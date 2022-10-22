@@ -6,12 +6,8 @@
 // const b = {}
 // }
 
-(start)->(a)
-(a)->(R)
-(in::R)->(b)
-(Type)->(a)
-(a)->(in::R)
-(R)->(b)->(end)
-(f: Type)->(Type)
+(start)->(~~∃x(~Fx v Gx\))
+(~~∃x(~Fx v Gx\)):DeMorgan's Law->(~∃x(Fx & ~Gx\))
+(~∃x(Fx & ~Gx\)):R->(end)
 
 // EOF
