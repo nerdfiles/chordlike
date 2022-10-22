@@ -10,4 +10,4 @@
 (~~∃x(~Fx v Gx\)):DeMorgan's Law->(~∃x(Fx & ~Gx\))
 (~∃x(Fx & ~Gx\)):R->(end)
 
-// EOF
+// {EOF}

@@ -1,0 +1,16 @@
+// {type:state}
+// {generate:true}
+
+(start)->(P → ~Q)
+(start)->(~Q)
+(P → ~Q)->(~P)
+(~Q)->(~P)
+(~P)->(end)
+
+(start)->(P & Q)
+(P & Q)->(P)
+(P & Q)->(Q)
+(P)->(end)
+(Q)->(end)
+
+// {EOF}
