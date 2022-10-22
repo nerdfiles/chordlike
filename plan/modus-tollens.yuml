@@ -1,5 +1,9 @@
 // {type:state}
 // {generate:true}
+// {description:
+// "Isn’t there a need for cacheing the results of the various reasoners in a
+// FOL form?"
+// [0]: https://www.w3.org/community/philoweb/2014/01/15/syllogism/}
 
 (start)->(P → ~Q)
 (start)->(~Q)
@@ -14,7 +18,7 @@
 (Q)->(end)
 
 (start)->(P v ~Q)
-(P v ~Q)->(~\(~P & Q\))
+(P v ~Q)demorgans.law->(~\(~P & Q\))
 (~\(~P & Q\))->(end)
 
 // {EOF}
