@@ -35,6 +35,7 @@
 (∃x\(\(Cx ∧ Rx\) ∧ ∀y\(\(Cy ∧ Ry\) → y = x\) ∧ Wx\))->(end)
 
 (start)->(∀x□Fy → □∀xFy)
+(note: ∀x□Fy → □∀xFy is valid.;1.¬\(∀x□Fy → □∀xFy\)\(w\);2.∀x□Fy\(w\)\(1\);3.¬□∀xFy\(w\)\(1\);4.wRv\(3\);5.¬∀xFy\(v\)\(3\);6.¬Fy\(v\)\(5\);7.□Fy\(w\)\(2\);8.Fy\(v\)\(7,4\);x)
 (∀x□Fy → □∀xFy)->(end)
 
 // {EOF}
