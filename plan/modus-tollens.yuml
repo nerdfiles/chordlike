@@ -31,4 +31,10 @@
 (P) hamm\(m.p\)->(Q)
 (Q)->(end)
 
+(start)->(∃x\(\(Cx ∧ Rx\) ∧ ∀y\(\(Cy ∧ Ry\) → y = x\) ∧ Wx\))
+(∃x\(\(Cx ∧ Rx\) ∧ ∀y\(\(Cy ∧ Ry\) → y = x\) ∧ Wx\))->(end)
+
+(start)->(∀x□Fy → □∀xFy)
+(∀x□Fy → □∀xFy)->(end)
+
 // {EOF}
