@@ -24,4 +24,10 @@
 (P v ~Q) demorgans.law->(~\(~P & Q\))
 (~\(~P & Q\))->(end)
 
+// {rule:If}
+(start)->(P → Q)
+(P)->(Q)
+(P → Q)->(Q)
+(Q)->(end)
+
 // {EOF}
