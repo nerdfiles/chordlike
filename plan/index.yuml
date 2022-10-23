@@ -7,7 +7,7 @@
 // }
 
 (start)->(~~∃x(~Fx v Gx\))
-(~~∃x(~Fx v Gx\)):DeMorgan's Law->(~∃x(Fx & ~Gx\))
-(~∃x(Fx & ~Gx\)):R->(end)
+(~~∃x(~Fx v Gx\)) demorgan's law ->(~∃x(Fx & ~Gx\))
+(~∃x(Fx & ~Gx\)) ⊥ ->(end)
 
 // {EOF}
