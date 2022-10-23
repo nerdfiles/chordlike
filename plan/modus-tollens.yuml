@@ -5,18 +5,21 @@
 // FOL form?"
 // [0]: https://www.w3.org/community/philoweb/2014/01/15/syllogism/}
 
+// {rule:IfOrModusTollens}
 (start)->(P → ~Q)
 (start)->(~Q)
 (P → ~Q)->(~P)
 (~Q)->(~P)
 (~P)->(end)
 
+// {rule:&Out}
 (start)->(P & Q)
 (P & Q)->(P)
 (P & Q)->(Q)
 (P)->(end)
 (Q)->(end)
 
+// {rule:DeMorgansLaw}
 (start)->(P v ~Q)
 (P v ~Q)demorgans.law->(~\(~P & Q\))
 (~\(~P & Q\))->(end)
