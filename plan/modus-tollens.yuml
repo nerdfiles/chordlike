@@ -26,8 +26,9 @@
 
 // {rule:If}
 (start)->(P → Q)
-(P)->(Q)
-(P → Q)->(Q)
+(start)->(P)
+(P → Q) hash\(m.p\)->(Q)
+(P) hamm\(m.p\)->(Q)
 (Q)->(end)
 
 // {EOF}
