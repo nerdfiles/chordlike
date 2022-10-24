@@ -33,18 +33,68 @@ table, label, input, button {
 }
 
 /**
+ * @name hpad
+ * @description
+ * @enum
+ */
+
+// @usage <TAG class="-[F]__next__"></TAG>
+// <ul class="focused">
+//   <li class="focused"></li>
+// </ul>
+// <ul class="-[aRb]historical-activity__focused__">
+//   <li rel="prev"></li>
+//   <li rel="next"></li>
+// </ul>
+
+.-[F]__next__ { }
+.-[G]__prev__ { }
+.-[P]__last__ { }
+
+.F { }
+.G { }
+.P { }
+
+.-[F] { }
+.-[G] { }
+.-[P] { }
+
+.__next__ { }
+.__prev__ { }
+.__last__ { }
+.__focused__ { }
+
+.aRb { }
+.-[aRb] { }
+.-[aRb]__focused__ { }
+.-[aRb]historical-activity__focused__ { }
+[class*="-[aRb]"][class*="historical-activity__focused__"] {}
+[class*="historical-activity__focused__"] {}
+[class*="-[aRb]"][class*="__focused__"] {
+  outline: 1px solid gold;
+}
+
+/**
  * @name Monad
  * @description .
+ * @try
+ * <div class="F -[F]"></div>
  */
 @mixin Monad ($args...) {
-  @each $o in meta.keyword($args) {
-    @extend .#{$o};
+  @each $name, $namespace in meta.keyword($args) {
+    @extend .#{name};
+    @extend .-[#{name}];
+    @extend .__#{$namespace}__;
+    @extend .-[#{$name}]__#{$namespace}__;
   }
 }
 
 @include Monad(
   $F: "next",
-  $G: "last"
+  $G: "prev",
+  $P: "last",
+  $aRb: "__focused__",
+  $aRb: "historical-activity__focused__"
 );
 
 /**

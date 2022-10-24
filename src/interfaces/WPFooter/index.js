@@ -12,6 +12,7 @@ const WPFooter = (props) => {
       <ul className='m-view--list__default__'>
         <li
           className='m-view--listing__default__'
+          role='none'
         >
           <a
             title='home'
@@ -23,6 +24,7 @@ const WPFooter = (props) => {
 
         <li
           className='m-view--listing__default__'
+          role='none'
         >
           <a
             title='docs'
@@ -34,6 +36,7 @@ const WPFooter = (props) => {
 
         <li
           className='m-view--listing__default__'
+          role='none'
         >
           <a
             title='unit tests'
@@ -45,6 +48,7 @@ const WPFooter = (props) => {
 
         <li
           className='m-view--listing__default__'
+          role='none'
         >
           <a
             title='code coverage'
@@ -56,6 +60,7 @@ const WPFooter = (props) => {
 
         <li
           className='m-view--listing__default__'
+          role='none'
         >
           <a
             title='static code analysis'
@@ -67,6 +72,7 @@ const WPFooter = (props) => {
 
         <li
           className='m-view--listing__default__'
+          role='none'
         >
           <a
             title='accessibility of and for the accessible'
@@ -78,6 +84,7 @@ const WPFooter = (props) => {
 
         <li
           className='m-view--listing__default__'
+          role='none'
         >
           <a
             title='repo'
