@@ -3,9 +3,9 @@
 
 (start) assumption ->(P > Q)
 (start) assumption ->(P)
-(start) arrow rule ->(~Q → ~P)
-(~Q) r.a.a. ->(start)
-(~Q → ~P)->(~P)
+(P → Q) arrow rule ->(~Q → ~P)
+(~Q) r.a.a. ->(~Q → ~P)
+(~Q → ~P) modus tollens ->(~P)
 (~P) &in ->(P & ~P)
 (P) &in ->(P & ~P)
 (P & ~P) contra. ->(Q)
