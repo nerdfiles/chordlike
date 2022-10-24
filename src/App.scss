@@ -47,10 +47,6 @@ table, label, input, button {
 //   <li rel="next"></li>
 // </ul>
 
-.-[F]__next__ { }
-.-[G]__prev__ { }
-.-[P]__last__ { }
-
 .F { }
 .G { }
 .P { }
@@ -58,6 +54,10 @@ table, label, input, button {
 .-[F] { }
 .-[G] { }
 .-[P] { }
+
+.-[F]__next__ { }
+.-[G]__prev__ { }
+.-[P]__last__ { }
 
 .__next__ { }
 .__prev__ { }
@@ -67,7 +67,15 @@ table, label, input, button {
 .aRb { }
 .-[aRb] { }
 .-[aRb]__focused__ { }
+.-[aRb]comments__focused__ { }
+.-[aRb]timegate__focused__ { }
+.-[aRb]chord__focused__ { }
+.-[aRb]rating__focused__ { }
 .-[aRb]historical-activity__focused__ { }
+.-[aRb]aRb__next__ {}
+.-[aRc]aRc__next__ {}
+.-[aRc]aRc__last__ {}
+// ...
 [class*="-[aRb]"][class*="historical-activity__focused__"] {}
 [class*="historical-activity__focused__"] {}
 [class*="-[aRb]"][class*="__focused__"] {
@@ -76,23 +84,27 @@ table, label, input, button {
 
 /**
  * @name Monad
- * @description .
+ * @description the point here is that such normative relata will exist merely
+ * by virtue of choosing delimitation for each set's namespace in a framework
+ * instance. "-[F]" exists whether or not one chooses to delimit by hyphens 
+ * or by spaces according to some self-evaluative or normatively founding 
+ * criteria. "for every line of code you write you introduce three bugs."
  * @try
- * <div class="F -[F]"></div>
+ * <div class="F -[F] -[F]__next__"></div>
  */
 @mixin Monad ($args...) {
   @each $name, $namespace in meta.keyword($args) {
     @extend .#{name};
     @extend .-[#{name}];
-    @extend .__#{$namespace}__;
-    @extend .-[#{$name}]__#{$namespace}__;
+    @extend .#{$namespace};
+    @extend .-[#{$name}]#{$namespace};
   }
 }
 
 @include Monad(
-  $F: "next",
-  $G: "prev",
-  $P: "last",
+  $F: "__next__",
+  $G: "__prev__",
+  $P: "__last__",
   $aRb: "__focused__",
   $aRb: "historical-activity__focused__"
 );
