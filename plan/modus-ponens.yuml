@@ -1,0 +1,11 @@
+// {type:state}
+// {generate:true}
+
+(start)->(P > Q)
+(start)->(P)
+(P → Q)->(~\(P & ~Q\))
+(~Q) r.a.a. ->(~P)
+(P)->(P & ~P)
+(~P)->(P & ~P)
+(P & ~P)->(Q)
+(Q)->(end)
