@@ -1,11 +1,11 @@
 // {type:state}
 // {generate:true}
 
-(start)->(P > Q)
-(start)->(P)
-(P → Q)->(~\(P & ~Q\))
+(start) assumption ->(P > Q)
+(start) assumption ->(P)
+(P → Q) arr. rule ->(~\(P & ~Q\))
 (~Q) r.a.a. ->(~P)
-(P)->(P & ~P)
-(~P)->(P & ~P)
-(P & ~P)->(Q)
-(Q)->(end)
+(P) conj. in. ->(P & ~P)
+(~P) conj. in. ->(P & ~P)
+(P & ~P) contradiction ->(Q)
+(Q) q.e.d. ->(end)
