@@ -1,8 +1,8 @@
 // {type:state}
 // {generate:true}
 
-(start) assumption ->(P > Q)
-(start) assumption ->(P)
+(start) ass ->(P > Q)
+(start) ass ->(P)
 (P → Q) arrow rule ->(~Q → ~P)
 (~Q) proof by contradiction ->(~Q → ~P)
 (~Q → ~P) modus tollens ->(~P)
