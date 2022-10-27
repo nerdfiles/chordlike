@@ -2,11 +2,11 @@
 // {generated:true}
 
 (start)->(aRb)
-(aRb)->(bRc)
-(bRc)->(cRd)
-(bRc)->(cRe)
-(cRd)->(cRf)
-(cRd)->(cRg)
+(aRb) 2dc43a466a3fb5896dace477dcf43876b5ff20c59d83a45c26229b743987893e ->(bRc)
+(bRc) 2dc43a466a3fb5896dace477dcf43876b5ff20c59d83a45c26229b743987893e ->(cRd)
+(bRc) whatever.openssl.dgst.sha256\(nonce\) ->(cRe)
+(cRd) whatever.openssl.dgst.sha256\(nonce\) ->(cRf)
+(cRd) ... ->(cRg)
 (cRd)->(cRh)
 (cRh)->(cRi)
 (cRh)->(cRj)
