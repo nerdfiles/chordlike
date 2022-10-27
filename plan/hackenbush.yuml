@@ -1,11 +1,16 @@
 // {type:state}
 // {generated:true}
+// {description:next link relation type example. think of link relation type
+cache invalidation as state diagrams of processed or preimaged hackenbush games.
+servers may procedurally generate conceptual schems or organizations of
+underlying ontogenic material and machinic unconscious data.}
+// {see:https://www.iana.org/assignments/link-relations/link-relations.xhtml}
 
 (start)->(aRb)
 (aRb) 2dc43a466a3fb5896dace477dcf43876b5ff20c59d83a45c26229b743987893e ->(bRc)
 (bRc) 2dc43a466a3fb5896dace477dcf43876b5ff20c59d83a45c26229b743987893e ->(cRd)
-(bRc) whatever.openssl.dgst.sha256\(nonce\) ->(cRe)
-(cRd) whatever.openssl.dgst.sha256\(nonce\) ->(cRf)
+(bRc) next.openssl.dgst.sha256\(nonce\) ->(cRe)
+(cRd) next.openssl.dgst.sha256\(nonce\) ->(cRf)
 (cRd) ... ->(cRg)
 (cRd)->(cRh)
 (cRh)->(cRi)
