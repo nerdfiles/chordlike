@@ -1,0 +1,21 @@
+// {type:state}
+// {generated:true}
+
+(start)->(aRb)
+(aRb)->(bRc)
+(bRc)->(cRd)
+(bRc)->(cRe)
+(cRd)->(cRf)
+(cRd)->(cRg)
+(cRd)->(cRh)
+(cRh)->(cRi)
+(cRh)->(cRj)
+(cRj)->(cRk)
+(cRi)->(cRl)
+(cRk)->(cRl)
+(cRl)->(cRk)
+(cRk)->(cRm)
+(cRl)->(cRn)
+(cRm)->(cRo)
+(cRn)->(cRo)
+(cRo)->(end)

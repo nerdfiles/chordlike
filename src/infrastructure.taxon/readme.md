@@ -4,7 +4,7 @@
 
 1. taxon:wq
 
-## metacoding
+## meta-coding
 
 1. sassdoc
 2. sass-true

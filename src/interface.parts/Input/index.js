@@ -8,7 +8,7 @@ import { useState, useRef } from 'react'
 const log = console.log
 const begin = console.time
 const end = console.timeEnd
-const table = console.table
+const review = console.table
 
 /**
  * @constant
@@ -206,7 +206,7 @@ const Input = (props) => {
      */
     const OPERATOR = TOKENS[0]
 
-    table(TOKENLIST)
+    review(TOKENLIST)
 
     const isWellFormed = OPERANDS && OPERANDS.length > 1
     let leftOperand
